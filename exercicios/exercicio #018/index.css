@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+body{
+    font-family: monospace;
+    background-color: #fffac5;
+}
+
+h1{
+    color: #ff0000;
+}
+
+#prime
+{
+    
+}
+
+h2{
+    color: #ff6200;
+}
+
+/*
+    background-color: rgb(157, 157, 157);
+    text-align: center;
+    font-size: 3em;
+    color: black;
+*/

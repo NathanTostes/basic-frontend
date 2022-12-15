@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Beasts</title>
+    <style>
+        * {
+            font-size: 25px;
+        }
+        header{
+            margin: 15px;
+            padding: 5px 5px 5px 5px;
+            border: 3px solid rgb(209, 181, 2);
+        }
+        body{
+            background-color: black;
+        }
+        h1#principal{
+            color: rgb(209, 181, 2);
+            text-align: center;
+        }
+        h2#menu:hover{
+            content: normal;
+        }
+        p{
+            color: white;
+        }
+        section{
+            display: inline;
+        }
+        section:hover > h2{
+            color: white;
+            margin-right: 30px;
+        }
+        section:hover > h3.secret{
+            display: inline;
+        }
+        section > h2, h3{
+            color: rgb(209, 181, 2);
+            display: inline;
+        }
+        h3.secret{
+            display: none;
+        }
+        h2#fire{
+            background-image: radial-gradient( #ff0000, rgb(115, 0, 0));
+            color: black;
+            margin-left: 15px;
+            position: absolute;
+            padding: 40px 30px 40px 30px;
+            border: 1px solid rgb(81, 81, 81);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="principal">Mystic Beasts</h1>
+        <section>
+        <h2>Menu</h2>
+        <h3 class="secret">Tipos</h3>
+        </section>
+    </header>
+    <section>
+        <h2 id="fire">Fire</h2>
+    </section>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegando com iframe</title>
+    <style>
+        iframe{
+            border: 1px solid black;
+            width: 97vw;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Navegação por iframes</h1>
+    <ul>
+        <li><a href="frames/frame01.html" target="frame1">Página 1</a></li>
+        <li><a href="frames/frame02.html" target="frame1">Página 2</a></li>
+    </ul>
+    <iframe name="frame1" srcdoc="<h1>Abra algum dos links acima</h1>">
+
+    </iframe>
+</body>
+</html>
