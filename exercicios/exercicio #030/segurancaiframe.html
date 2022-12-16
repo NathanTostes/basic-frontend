@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframes mais seguros</title>
+    <style>
+        iframe{
+            border: 1px solid black;
+            width: 350px;
+            display: block;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aumentando a segurança dos iframes</h1>
+    <iframe src="frames/frame03.html" sandbox="allow-same-origin allow-forms allow-scripts" referrerpolicy="no-referrer">
+        Conteúdo incompatível
+    </iframe>
+    <iframe src="frames/frame04.html" sandbox="allow-scripts" referrerpolicy="no-referrer">
+        Conteúdo incompatível
+    </iframe>
+</body>
+</html>
