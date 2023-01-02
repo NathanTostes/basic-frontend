@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+/* Configuração para Retrato */
+
+body {
+    background: url(../imagens/cev-portrait.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
