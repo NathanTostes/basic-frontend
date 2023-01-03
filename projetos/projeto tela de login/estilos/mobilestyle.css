@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+    background-color: #a138a1;
+}
+
+main#loginform {
+    background-color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 90vh;
+    width: 80vw;
+    border-radius: 10px;
+}
+
+main#loginform > div#loginimage {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 30%;
+    width: 100%;
+    background-image: url(../imagens/loginimage.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+main#loginform h1#formtitle {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+
+main#loginform p#formtext {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 10px;
+}
