@@ -3,6 +3,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
@@ -19,9 +20,11 @@ main#loginform {
     height: 90vh;
     width: 80vw;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.568);
+    transition: width 0.4s, heigth 0.4s;
 }
 
-main#loginform > div#loginimage {
+div#loginimage {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     height: 30%;
@@ -41,4 +44,12 @@ main#loginform p#formtext {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 10px;
+}
+
+label.formlabel > img {
+    
+}
+
+input.inputclass {
+    height: 50px;
 }

@@ -16,8 +16,20 @@
         <div id="form">
             <h1 id="formtitle">Login</h1>
             <p id="formtext">Seja-bem vindo(a) novamente, realize o login para acessar sua conta</p>
-            <form action="login.php" method="post" autocomplete="on">
-
+            <form id="theform" action="login.php" method="post" autocomplete="on">
+                <div class="block">
+                    <label class="formlabel" for="iemail">
+                        
+                    </label>
+                    <input id="iemail" name="email" type="text" class="inputclass" autocomplete="email">
+                </div>
+                <br>
+                <div class="block">
+                    <label class="formlabel" for="ipassword">
+                        
+                    </label>
+                    <input id="ipassword" name="password" class="inputclass" type="pasword">
+                </div>
             </form>
         </div>
     </main>
