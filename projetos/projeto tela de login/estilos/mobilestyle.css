@@ -34,22 +34,90 @@ div#loginimage {
     background-position: center center;
 }
 
-main#loginform h1#formtitle {
+div#form {
+    padding: 2%;
+}
+
+h1#formtitle {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2em;
     text-align: center;
-    padding: 10px;
+    padding: 7px;
 }
 
-main#loginform p#formtext {
+p#formtext {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
     text-align: center;
+    padding: 7px;
+}
+
+div.block {
+    display: block;
+    height: 42px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #ff85ef;
+    transition: 0.4s;
+}
+
+div.block:hover {
+    background-color: #f8b3e3;
+}
+
+div.block span {
+    font-size: 2em;
+    padding: 5px;
+}
+
+div.block input {
+    height: 80%;
+    width: 85%;
+    border: none;
+    border-radius: 20px;
+    margin: 1.5%;
+    transform: translateY(-12px);
+}
+
+input[type="submit"] {
+    font-family: arial, helvetica, sans-serif;
+    display: block;
+    font-size: 1em;
+    height: 40px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #c25ac2;
+    transition-duration: 0.4s;
+}
+
+input[type="submit"]:hover {
+    background-color: #ce94cb;
+    cursor: pointer;
+}
+
+a#button {
+    font-family: arial, helvetica, sans-serif;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    height: 40px;
+    width: 100%;
     padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    color: #000000;
+    background-color: #8b428b;
+    transition-duration: 0.4s;
 }
 
-label.formlabel > img {
-    
-}
-
-input.inputclass {
-    height: 50px;
+a#button:hover {
+    background-color: #996d97;
+    cursor: pointer;
 }

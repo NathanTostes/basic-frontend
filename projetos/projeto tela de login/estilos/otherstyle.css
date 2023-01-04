@@ -23,6 +23,15 @@
         height: 100%;
         width: 70%;
     }
+
+    h1#formtitle {
+        font-size: 2.25em;
+    }
+
+    p#formtext {
+        font-size: 1.35em;
+    }
+
 }
 
 @media screen and (min-width: 992px) {
@@ -36,16 +45,26 @@
     }
 
     div#loginimage {
-        float: left;
-        height: 100%;
-        width: 50%;
-        border-top-right-radius: 0px;
-        border-bottom-left-radius: 10px;
-    }
-
-    div#form {
         float: right;
         height: 100%;
         width: 50%;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 10px;
     }
+
+    div#form {
+        float: left;
+        height: 100%;
+        width: 50%;
+    }
+
+    h1#formtitle {
+        font-size: 2.25em;
+    }
+
+    p#formtext {
+        font-size: 1.35em;
+    }
+
 }
