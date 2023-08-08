@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <style>
+        span{
+            height: 1cm;
+            width: 1cm;
+            color: #ffffff;
+            background-color: #000000;
+        }
+        span#um {
+            display: inline;
+        }
+        span#dois {
+            display: inline-block;
+        }
+        span#tres {
+            display: contents;
+        }
+        span#quatro {
+            display: block;
+        }
+        span#cinco {
+            display: inline-block;
+        }
+        span#seis {
+            display: inline;
+            overflow: hidden;
+        }
+        span#sete {
+            display: none;
+        }
+        span#oito {
+            display: contents;
+        }
+        span#nove {
+            display: block;
+            overflow: scroll;
+        }
+        span#dez {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet <span id="um">consectetur adipisicing</span> elit. Eius eum corporis, commodi pariatur in nulla dolor exercitationem mollitia neque voluptate veritatis tenetur debitis aliquid sed consequatur porro tempora, rem earum.</p>
+    <br>
+    <p>Lorem ipsum dolor sit amet <span id="dois">consectetur adipisicing</span> elit. Eius eum corporis, commodi pariatur in nulla dolor exercitationem mollitia neque voluptate veritatis tenetur debitis aliquid sed consequatur porro tempora, rem earum.</p>
+    <br>
+    <p>Lorem ipsum dolor sit amet <span id="cinco">consectetur</span> <span id="seis">adipisicing</span> elit. Eius eum corporis, commodi pariatur in nulla dolor exercitationem mollitia neque voluptate veritatis tenetur debitis aliquid sed consequatur porro tempora, rem earum.</p>
+    <br>
+    <p>Lorem ipsum dolor sit amet <span id="sete">consectetur</span> <span id="oito">adipisicing</span> elit. Eius eum corporis, commodi pariatur in nulla dolor exercitationem mollitia neque voluptate veritatis tenetur debitis aliquid sed consequatur porro tempora, rem earum.</p>
+    <br>
+    <p>Lorem ipsum dolor sit amet <span id="nove">consectetur</span> <span id="dez">adipisicing</span> elit. Eius eum corporis, commodi pariatur in nulla dolor exercitationem mollitia neque voluptate veritatis tenetur debitis aliquid sed consequatur porro tempora, rem earum.</p>
+</body>
+</html>
