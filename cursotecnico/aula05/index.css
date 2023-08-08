@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "medieval";
+    src: url(OldLondon.ttf);
+}
+
+#title {
+    font-weight: bolder;
+    font-size: 120px;
+    font-family: medieval;
+}
+
+.text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+}
+
+li a {
+    color: greenyellow;
+    background-color: black;
+}
