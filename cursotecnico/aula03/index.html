@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Disciplinas</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <table>
+            <label for="best">Matéria Favorita: </label>
+            <select name="best" id="best">
+                <option value="bd">Banco de Dados</option>
+                <option value="dw">Desenvolvimento Web</option>
+                <option value="lh">Laboratório de Hardware</option>
+                <option value="la">Laboratório de Algoritmos</option>
+                <option value="so">Sistemas Operacionais</option>
+                <option value="ta">Teoria de Algoritmos</option>
+            </select>
+            <button onclick="alteraFav()">Trocar cor</button>
+        <caption>Disciplinas</caption>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Professor</th>
+        </tr>
+        <tr id="bd">
+            <td>BD2023</td>
+            <td>Modelagem de Banco de Dados</td>
+            <td>Emerson</td>
+        </tr>
+        <tr id="dw">
+            <td>DW2023</td>
+            <td>Desenvolvimento Web</td>
+            <td>Marcelo</td>
+        </tr>
+        <tr id="lh">
+            <td>LH2023</td>
+            <td>Laboratório de Hardware</td>
+            <td>Ana Cláudia</td>
+        </tr>
+        <tr id="la">
+            <td>LA2023</td>
+            <td>Laboratório de Algoritmos</td>
+            <td>Roberto</td>
+        </tr>
+        <tr id="so">
+            <td>SO2023</td>
+            <td>Sistemas Operacionais</td>
+            <td>Camilo</td>
+        </tr>
+        <tr id="ta">
+            <td>TA2023</td>
+            <td>Teoria de Algoritmos</td>
+            <td>Roberto</td>
+        </tr>
+    </table>
+</body>
+<script>
+    function alteraFav() {
+        document.getElementById("best.value").style.backgroundColor = "#008000";
+    }
+</script>
+</html>

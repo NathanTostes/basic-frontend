@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+table{
+    background-color: #cfcfcf;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+caption{
+    background-color: #cfcfcf;
+}
+
+table, tr, td, th, caption{
+    border: 1px solid #000000;
+    padding: 10px 5px 10px 5px;
+}
+
+.best{
+    color: #cfcfcf;
+    background-color: #3c9e3c;
+}
+
+.worst{
+    color: #cfcfcf;
+    background-color: rgb(196, 59, 59)
+}
+
+select{
+    margin: 0px 0px 50px 0px;
+    background-color: #ffffff;
+}
+
+option{
+    background-color: #ffffff;
+    color: #000000;
+}

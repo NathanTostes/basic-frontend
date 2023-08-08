@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Disciplinas</title>
+    <style>
+
+    table{
+    background-color: #cfcfcf;
+    border-collapse: collapse;
+    border: 1px solid black;
+    }
+
+    caption{
+    background-color: #cfcfcf;
+    }
+
+    table, tr, td, th, caption{
+    border: 1px solid #000000;
+    padding: 10px 5px 10px 5px;
+    }
+
+    .best{
+    color: #cfcfcf;
+    background-color: #3c9e3c;
+    }
+
+    .worst{
+    color: #cfcfcf;
+    background-color: rgb(196, 59, 59)
+    }
+
+    select{
+    margin: 0px 0px 50px 0px;
+    background-color: #ffffff;
+    }
+
+    option{
+    background-color: #ffffff;
+    color: #000000;
+    }
+
+    </style>
+</head>
+<body>
+    <table>
+            <label for="best">Matéria Favorita: </label>
+            <select id="best">
+                <option value="bd">Banco de Dados</option>
+                <option value="dw">Desenvolvimento Web</option>
+                <option value="lh">Laboratório de Hardware</option>
+                <option value="la">Laboratório de Algoritmos</option>
+                <option value="so">Sistemas Operacionais</option>
+                <option value="ta">Teoria de Algoritmos</option>
+            </select>
+            <button onclick="alteraFav(best.value)">Trocar cor</button>
+        <caption>Disciplinas</caption>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Professor</th>
+        </tr>
+        <tr id="bd">
+            <td>BD2023</td>
+            <td>Modelagem de Banco de Dados</td>
+            <td>Emerson</td>
+        </tr>
+        <tr id="dw">
+            <td>DW2023</td>
+            <td>Desenvolvimento Web</td>
+            <td>Marcelo</td>
+        </tr>
+        <tr id="lh">
+            <td>LH2023</td>
+            <td>Laboratório de Hardware</td>
+            <td>Ana Cláudia</td>
+        </tr>
+        <tr id="la">
+            <td>LA2023</td>
+            <td>Laboratório de Algoritmos</td>
+            <td>Roberto</td>
+        </tr>
+        <tr id="so">
+            <td>SO2023</td>
+            <td>Sistemas Operacionais</td>
+            <td>Camilo</td>
+        </tr>
+        <tr id="ta">
+            <td>TA2023</td>
+            <td>Teoria de Algoritmos</td>
+            <td>Roberto</td>
+        </tr>
+    </table>
+</body>
+<script>
+    function alteraFav(best) {
+        trs = document.getElementsByTagName('tr');
+        console.log(trs);
+        trs = Array.from(trs);
+        console.log(trs);
+        trs.forEach(tr => {
+            tr.style.backgroundColor = "#cfcfcf";
+        });
+        document.getElementById(best).style.backgroundColor = "#008000";
+    }
+</script>
+</html>
