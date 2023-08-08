@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanchonete</title>
+</head>
+<body>
+    <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome">
+        <br>
+        <fieldset>
+            <legend>Lanche</legend>
+            <label for="lan1">X-Salada</label>
+            <input type="radio" name="hamburger" id="lan1">
+            <br>
+            <label for="lan2">X-Frango</label>
+            <input type="radio" name="hamburger" id="lan2">
+            <br>
+            <label for="lan3">X-Burger</label>
+            <input type="radio" name="hamburger" id="lan3">
+        </fieldset>
+        <label for="molho">Molho</label>
+        <input type="checkbox" name="molho" id="molho">
+        <br>
+        <fieldset>Complemento
+        <select name="complemento" id="complemento">
+            <option value="ref">Refrigerante</option>
+            <option value="cho">Chocolate</option>
+            <option value="bat">Batata</option>
+        </select>
+        </fieldset>
+        <br>
+        <fieldset>
+        <legend>Quantidade de bifes</legend>
+        <select name="bife" id="bife" size="4">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        </fieldset>
+        <label for="text">Avaliação:</label>
+        <br>
+        <textarea name="text" id="text" cols="30" rows="10"></textarea>
+    </form>
+</body>
+</html>
