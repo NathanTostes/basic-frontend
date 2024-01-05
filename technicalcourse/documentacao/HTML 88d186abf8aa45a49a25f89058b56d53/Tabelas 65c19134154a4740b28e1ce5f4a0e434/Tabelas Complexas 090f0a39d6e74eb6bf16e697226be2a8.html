@@ -1,0 +1,748 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tabelas Complexas</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="090f0a39-d6e7-4eb6-bf16-e697226be2a8" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">⚛️</span></div><h1 class="page-title">Tabelas Complexas</h1><p class="page-description"></p></header><div class="page-body"><p id="f1c497fc-4006-4f82-81c6-c2d00d2bbefa" class="">
+</p><h2 id="c2103728-09f7-41bb-b0dc-cf85e5d4986f" class="">Tabelas</h2><p id="4c48f9c8-e4bc-4990-9bb1-01cc6dc88f87" class="">
+</p><p id="e40b83e2-9a33-4265-bd4d-bec504920c9b" class="">As tabelas complexas do html são feitas da seguinte forma:</p><p id="e87ae9eb-bba2-41ed-8c79-a1c93c2137fe" class="">Primeiramente se cria o parâmetro table</p><p id="734d0e3a-3c75-429c-9fb4-351dbbfdf914" class="">Dentro de table você terá outros 3 parâmetros</p><p id="e75933ee-0d0b-4aee-a717-e0c76df554eb" class="">Esses parâmetros serão divisões dentro de table</p><p id="4c3fead7-9eb6-4096-9567-5aa16f77259f" class="">thead - Será o cabeçalho da tabela</p><p id="8b6ef29d-b302-4d6c-a291-87a902c5df05" class="">tbody - Será o corpo (conteúdo) da tabela</p><p id="89562dfa-8671-41e6-bef6-d163561b14ac" class="">tfoot - Será o rodapé da tabela</p><p id="d21d6606-e556-4063-af89-ab7a0a101370" class="">Não é obrigatório criar todas as 3 divisões</p><p id="2d94e625-60ad-4eb6-83e6-c97d4ccd7277" class="">Todas essas divisões podem receber os comandos abaixo</p><p id="5f017d8d-d01b-4156-9888-1361458d5f76" class="">tr - Cria uma linha</p><p id="e91e810c-3e5d-41a8-9882-7d95c85d7623" class="">th - Cria uma coluna de título</p><p id="e6fcf843-c56b-4536-b9c7-d2d0e88d78a0" class="">td - Cria uma coluna de conteúdo</p><p id="13709f0e-64b7-4ea5-b0ef-900915667f06" class="">th e td só podem ser usados dentro de um tr</p><p id="9534b123-b568-460a-ad09-213cacec4126" class="">Abaixo temos um comando específico para fazer o título de sua lista:</p><p id="b4bf4a02-a81f-4b91-be6f-7b04cc2e4900" class="">caption - Título/legenda para sua tabela, ocupa largura total de uma tabela</p><p id="9e71a1b2-e59b-41bb-acac-658f6f33da23" class="">
+</p><p id="9b3981cf-22cb-46b4-8bfc-27976355122c" class="">Exemplo:</p><pre id="3e8483d1-0beb-4a8d-a08d-e281ca79605d" class="code"><code>&lt;table&gt;
+        &lt;caption&gt;População dos Estados do Brasil&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Estado&lt;/th&gt;
+                &lt;th&gt;População&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;São Paulo&lt;/td&gt;
+                &lt;td&gt;45 919 049&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Minas Gerais&lt;/td&gt;
+                &lt;td&gt;21 168 791&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Rio de Janeiro&lt;/td&gt;
+                &lt;td&gt;17 264 943&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Total de Habitantes&lt;/th&gt;
+                &lt;td&gt;- - -&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tfoot&gt;
+    &lt;/table&gt;</code></pre><p id="47cf98ab-4dbc-4401-a350-196701330cc7" class="">
+</p><h2 id="68715a0c-d6b7-41f9-8d10-66a5bd7d5bd0" class="">Hierarquia de Tabelas Complexas</h2><ul id="211152a9-c7f2-499a-b1a7-e7ac1b79bc8f" class="bulleted-list"><li style="list-style-type:disc">Essa hierarquia serve para as tabelas complexas</li></ul><p id="2768769a-c273-48ea-a430-109e4d054bdb" class="">
+</p><p id="f8ebf3d8-a52b-421b-8e8a-32b8601696d1" class=""><span style="border-bottom:0.05em solid"><strong>Tabela</strong></span></p><pre id="1c09ef80-43bf-411c-86d1-1c1c71a5378d" class="code"><code>&lt;table&gt;
+        
+&lt;/table&gt;</code></pre><p id="8343c899-5df0-4a53-8135-2dc3a1961a92" class="">
+</p><ul id="7574b7cc-7702-483d-b99f-e7088004a9a9" class="bulleted-list"><li style="list-style-type:disc">Dentro da tabela possuímos três divisões</li></ul><p id="a528d212-e341-408e-b135-647bf99b3834" class="">
+</p><p id="edd6afab-6b6c-47c8-b1a4-49d71cf8bc90" class=""><span style="border-bottom:0.05em solid"><strong>Cabeçalho da tabela</strong></span></p><pre id="0d8acb47-9a61-470a-80f3-0a8e61c46ee6" class="code"><code>&lt;thead&gt;
+        
+&lt;/thead&gt;</code></pre><p id="f64a231e-b31f-425f-8754-c5b91480428f" class=""><span style="border-bottom:0.05em solid"><strong>Corpo da tabela</strong></span></p><pre id="dd370c8e-d4bf-4113-93fa-1b3ab1ee855f" class="code"><code>&lt;tbody&gt;
+        
+&lt;/tbody&gt;</code></pre><p id="0a66fe2e-0999-4046-98ef-4d5e8c8c0a79" class=""><span style="border-bottom:0.05em solid"><strong>Rodapé da tabela</strong></span></p><pre id="eb4c38ca-685d-4d61-937c-e3a94553e51d" class="code"><code>&lt;tfoot&gt;
+        
+&lt;/tfoot&gt;</code></pre><p id="6e761278-f1d3-4880-bbe3-57f406e0c600" class="">
+</p><ul id="100f7c3a-67e8-45e6-bc6a-9042147e1542" class="bulleted-list"><li style="list-style-type:disc">Dentro dos três parâmetros acima possuímos o seguinte parâmetro:</li></ul><p id="6399aafc-1736-4a4d-abaf-42418737b67e" class="">
+</p><p id="06f1a3f5-5b5d-4d67-91b3-7eb24af6b4e4" class=""><span style="border-bottom:0.05em solid"><strong>Linha da tabela</strong></span></p><pre id="5c2561ac-b312-4509-b92c-b306ca542ff2" class="code"><code>&lt;tr&gt;
+        
+&lt;/tr&gt;</code></pre><p id="20f7622b-71ac-48d2-90ce-09efb52f4a1b" class="">
+</p><ul id="d5e95694-0ed1-4d9d-afd7-292a38931def" class="bulleted-list"><li style="list-style-type:disc">Dentro das linhas da tabela possuímos os seguintes comandos:</li></ul><ul id="2a6c9641-6057-49e4-af92-a813e1b62dd0" class="bulleted-list"><li style="list-style-type:disc">Esses comandos indicam as colunas</li></ul><p id="06187810-8b35-4d46-a6ab-c3d63c8b0ebf" class="">
+</p><p id="cf2c7329-4fa8-4883-a1cb-abfb3e3f5e91" class=""><span style="border-bottom:0.05em solid"><strong>Coluna de título da tabela</strong></span></p><pre id="b2297b63-4f80-4a69-833d-c20402a2063c" class="code"><code>&lt;th&gt;
+    
+&lt;/th&gt;</code></pre><p id="6a0dd904-2b67-4b62-a828-406a6f7cb96d" class=""><span style="border-bottom:0.05em solid"><strong>Coluna de dados da tabela</strong></span></p><pre id="3597422f-b819-4fa5-83bc-1f95b9c41380" class="code"><code>&lt;td&gt;
+        
+&lt;/td&gt;</code></pre><p id="42a9b431-38fe-4460-931d-8a63f38f5d3d" class="">
+</p><ul id="c51e02d2-d2c6-43e4-b3d3-378ff6315819" class="bulleted-list"><li style="list-style-type:disc">Temos um parâmetro nas tabelas complexas que é o título da tabela (legenda da tabela), é o parâmetro logo abaixo:</li></ul><p id="6e43803c-e1e4-48a9-a2cb-e126b469d5d4" class="">
+</p><p id="55237fd7-54a0-4917-912b-9542b3cbeffc" class=""><span style="border-bottom:0.05em solid"><strong>Título da tabela</strong></span></p><pre id="046209ba-36ff-4755-bf31-38e5a33faeb1" class="code"><code>&lt;caption&gt;
+            
+&lt;/caption&gt;</code></pre><ul id="fdbd8b92-eca0-4a34-8ca4-5784d106f272" class="bulleted-list"><li style="list-style-type:disc">Dentro do caption não se pode colocar tr,th,td, apenas se pode colocar um texto, esse texto será a legenda (título) da sua tabela, irá descrever do que se trata sua tabela</li></ul><ul id="a16efc35-8696-4193-bb34-30f869271304" class="bulleted-list"><li style="list-style-type:disc">Independente do local que você colocar o caption dentro do seu código ele sempre aparecerá encima</li></ul><ul id="0fa38be5-1f73-4b52-af4a-f03ba5d70549" class="bulleted-list"><li style="list-style-type:disc">Ocupa a largura total da tabela</li></ul><p id="a5377169-b608-481d-b5fa-86101fd5888e" class="">
+</p><h2 id="e33d5133-9dbe-4351-9495-f8f676f73a17" class="">Semântica do título</h2><p id="df0a27c8-bc3c-423f-a66c-d69f8e55d89d" class="">
+</p><ul id="931b6dec-ece6-4762-9bb9-70ebaa7aaa1b" class="bulleted-list"><li style="list-style-type:disc">Escopo: (local onde estão os dados que pertencem ao título)</li></ul><p id="a1152c44-70cb-4d7d-ae57-c86eb6d0c73b" class="">
+</p><p id="b788469d-6e8e-497e-90d6-8d7ce5884615" class="">Todo th é um título da sua tabela</p><p id="d3d14bee-685a-4ef3-b7f8-605fb163f6a8" class="">Em uma tabela todo título recebe dados</p><p id="37ab3656-9171-4db6-9ca5-d8603a6c1789" class="">Para melhorar a semântica de um título podemos usar os parâmetros a seguir:</p><p id="219864c7-7536-4a3c-9b6f-3121d40b733a" class="">
+</p><p id="c2ed6365-d407-493d-9946-b58d62311b70" class=""><span style="border-bottom:0.05em solid"><strong>Indicar escopo</strong></span> - Serve para indicar o escopo do título</p><pre id="4a9fa239-f769-47c4-88f9-2de4a1578d5a" class="code"><code>&lt;th scope=&quot;&quot;&gt;&lt;/th&gt;</code></pre><p id="7c427f7e-319b-42b9-824f-47bb3cc6a031" class="">
+</p><p id="cefc47ec-a6d4-42aa-a3ed-1acc12be1692" class=""><span style="border-bottom:0.05em solid"><strong>Escopo na linha</strong></span> - Indica que o escopo do título está na mesma linha do título</p><pre id="4ff5d756-9dd7-485c-bc5e-7059f5515049" class="code"><code>&lt;th scope=&quot;row&quot;&gt;</code></pre><p id="90008be8-3aa6-4276-a20a-1ad48062ba26" class="">
+</p><p id="b6f8a18b-02ba-4ec1-b5d8-0663ecbbe9cf" class=""><span style="border-bottom:0.05em solid"><strong>Escopo na coluna</strong></span> - Indica que o escopo do título está na mesma coluna do título</p><pre id="d9391eaa-f09c-47f7-81ac-99faa036d2e1" class="code"><code>&lt;th scope=&quot;col&quot;&gt;</code></pre><p id="89d511fa-93cd-4850-9584-de02ef6d6bed" class="">
+</p><p id="b47105b1-fd96-4beb-812e-46492e917166" class=""><span style="border-bottom:0.05em solid"><strong>Escopo no grupo de linhas</strong></span> - Indica que o escopo do título está em todas as linhas que o título ocupa</p><pre id="2c575072-90d2-4f2b-87de-f4b1de91fec4" class="code"><code>&lt;th scope=&quot;rowgroup&quot;&gt;</code></pre><p id="3cda9e00-4ce0-4c98-8a96-29d6a6030431" class="">
+</p><p id="7182c26c-6c83-4b96-89c3-dfbb62475d54" class=""><span style="border-bottom:0.05em solid"><strong>Escopo no grupo de colunas</strong></span> - Indica que o escopo do título está em todas colunas que o título ocupa</p><pre id="ad37ad1f-f0c7-4ff5-9930-871c9f9b8f4a" class="code"><code>&lt;th scope=&quot;colgroup&quot;&gt;</code></pre><p id="6924f2dd-c7ff-4401-a1a3-5f232ce03573" class="">
+</p><ul id="68baaf72-c032-4f0e-b725-ab6ec08f8f20" class="bulleted-list"><li style="list-style-type:disc">Os escopos de grupo funcionam da seguinte forma: Se um título ocupa 5 linhas e você seta ele como rowgroup indicará que os dados desse título está nas 5 linhas em que ele ocupa</li></ul><p id="e86472ff-658b-458d-b5e1-2598bc2e3bda" class="">
+</p><h2 id="cf035dc4-f347-4287-bfef-c77444b1090f" class="">Mesclagem de células</h2><p id="dcfe0bb5-8169-4fcc-b27a-57a1138a3ed6" class="">
+</p><p id="58ae6f56-9d1c-4cec-acd7-beff4bb5585a" class="">
+</p><p id="708df0f9-65cd-40d3-810c-ca1604721ede" class=""><span style="border-bottom:0.05em solid"><strong>Mesclagem de colunas</strong></span></p><pre id="d0fceb81-6445-4e71-aa84-3b3cee1c4418" class="code"><code>&lt;td colspan=&quot;&quot;&gt;</code></pre><p id="75f789a5-f303-4503-ab3c-ffdf655a45b4" class="">Fará com que a célula se expanda para as colunas do lado direito (Se mescle com as células do lado direito)</p><p id="1e827736-b2c9-4afe-a249-260c205b1d36" class="">
+</p><ul id="1aa07e2a-319c-4ac9-832f-b4c4764ad255" class="bulleted-list"><li style="list-style-type:disc">Dentro das aspas se coloca para quantas colunas esta célula irá se expandir</li></ul><ul id="da261ba5-8f8f-4256-8220-04493d197a90" class="bulleted-list"><li style="list-style-type:disc">Se sua tabela não tiver a quantidade de colunas que você escolheu para uma célula se expandir, ela irá se expandir ao máximo até onde há colunas</li></ul><p id="590a18be-22e1-4408-ba47-bd845ec498aa" class="">
+</p><p id="251b35be-5e63-42c2-9958-83c5054c56d4" class=""><span style="border-bottom:0.05em solid"><strong>Mesclagem de linhas</strong></span></p><pre id="b9543442-e7fd-4201-905e-d6347919cda3" class="code"><code>&lt;td rowspan=&quot;&quot;&gt;</code></pre><p id="8b0d1816-8ca7-4292-a23f-204a7354d824" class="">Fará com que a célula se expanda para as linhas de baixo (Se mescle com as células de baixo)</p><p id="e5e0107d-0ddb-480b-a323-c607f59a65b3" class="">
+</p><ul id="ae003214-9299-41c1-954f-335fad45fee7" class="bulleted-list"><li style="list-style-type:disc">Dentro das aspas se coloca para quantas linhas esta célula irá se expandir</li></ul><ul id="79d3b5dd-da34-4a82-88a7-d4694e9a7e0b" class="bulleted-list"><li style="list-style-type:disc">Se sua tabela não tiver a quantidade de linhas que você escolheu para uma célula se expandir, ela irá se expandir ao máximo até onde há linhas</li></ul></div></article></body></html>

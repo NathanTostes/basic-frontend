@@ -1,0 +1,735 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Caixas de resposta (c/input)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7b6dbb85-28ef-453d-9771-881ef9085c10" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📦</span></div><h1 class="page-title">Caixas de resposta (c/input)</h1><p class="page-description"></p></header><div class="page-body"><p id="5f1a209d-e7c0-4427-8693-55f9eecb7828" class="">
+</p><p id="aeafbb6e-7cf4-44b7-bd88-d305947c6627" class=""><span style="border-bottom:0.05em solid"><strong>Caixa de resposta</strong></span></p><p id="8e693c27-89d2-4f13-8823-9c066edde902" class="">Para criar as caixas de respostas do formulário, basta digitar input e escolher algum tipo de input, confira abaixo:</p><pre id="0e91aa52-01a3-410a-8979-e838778e4106" class="code"><code>&lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot;&gt;</code></pre><ul id="e16a48bb-dc58-4d5d-a25d-5afde47ecf3e" class="bulleted-list"><li style="list-style-type:disc">Acima temos um exemplo de input:text</li></ul><ul id="f05eec1c-d2c0-4c32-9d2d-5fffaf886f53" class="bulleted-list"><li style="list-style-type:disc">Para quase todo input você deverá adicionar um “name” e um “id” para ele, esses parâmetros são importantes para identificar o input</li></ul><ul id="0781bee3-a5a4-4114-8440-5c0816994d51" class="bulleted-list"><li style="list-style-type:disc">Dentro de type indicamos qual o tipo do input (caixa de resposta)</li></ul><ul id="389cc936-593b-4995-a537-edc0d86fcbf7" class="bulleted-list"><li style="list-style-type:disc">Existem vários parâmetros que podem ser colocados dentro de input</li></ul><p id="e4b95616-54bd-41da-889a-b0831eaac0c1" class="">
+</p><p id="0cba3dc8-b61b-45ef-b738-e56385122ff4" class=""><span style="border-bottom:0.05em solid"><strong>Tipos de caixa de respostas</strong></span></p><p id="ca6502a5-d113-4871-b129-bcddd0ca67e8" class="">Ao escrever “input” no VScode aparecem diversos tipos de inputs que você pode usar no seu formulário</p><p id="3dc1d711-4244-4b4b-950a-bbd6b2ce323d" class="">Alguns exemplos são: texto, data, hora, número, imagem, arquivo, e-mail, senha, telefone, cor, range</p><ul id="2152a701-0a2e-4d04-ba49-5f091585010d" class="bulleted-list"><li style="list-style-type:disc">Existem vários inputs para telefone porém o padrão é input:tel </li></ul><p id="66cc3275-4ba4-498c-826b-29aa51a6e66e" class="">
+</p><p id="bf64bff7-0018-4a7f-8c42-e04537fb0c49" class=""><span style="border-bottom:0.05em solid"><strong>Largura da caixa de respostas</strong></span></p><p id="3e865c79-4272-4305-9c83-dc08573f249c" class="">Ao utilizar o parâmetro “size” em um input, irá definir a largura desse input, baseada em quantas caracteres irão caber na caixa, confira abaixo:</p><pre id="d99023e6-9275-42c8-9719-934332d56882" class="code"><code>&lt;input type=&quot;text&quot; size=&quot;&quot;&gt;</code></pre><ul id="81718c5e-42c9-4fa9-892c-24bd07ec48ab" class="bulleted-list"><li style="list-style-type:disc">Size = a caixa vai ter o tamanho de quantas caracteres</li></ul><ul id="5e2930f7-3a7b-4d7d-9c86-374cc6db6bd9" class="bulleted-list"><li style="list-style-type:disc">Exemplo: se o size for 10, a caixa vai ter a largura de 10 caracteres</li></ul><ul id="320f0088-08db-4257-9430-ef9534b87f39" class="bulleted-list"><li style="list-style-type:disc">O valor padrão para size é de 20 </li></ul><ul id="12baaddd-d221-4c0d-b7b9-d0a71f255fe2" class="bulleted-list"><li style="list-style-type:disc">Se você escrever mais letras do que se cabe na caixa será criada uma rolagem lateral para ela</li></ul><p id="ce74a794-e8e6-4864-9bd4-fd8f099e85c8" class="">
+</p><p id="29ae19be-0094-4533-9351-6400592bcfb7" class=""><span style="border-bottom:0.05em solid"><strong>Texto dentro da caixa de resposta</strong></span></p><p id="0c0e7598-1b8d-423a-ae56-ecec55ae74db" class="">Se você quiser adicionar um texto para aparecer dentro da caixa de respostas, enquanto o usuário não digita nada, basta usar o parâmetro “placeholder”, confira a seguir:</p><pre id="a270b003-fb21-4b9d-9678-dbcf7ddfa333" class="code"><code>&lt;input type=&quot;text&quot; placeholder=&quot;&quot;&gt;</code></pre><ul id="8049516a-eb61-4d84-87e2-08f815de30dd" class="bulleted-list"><li style="list-style-type:disc">Dentro de “placeholder” você coloca o que você deseja que esteja escrito dentro da caixa enquanto o usuário não digita nada</li></ul><p id="6638b94c-6466-48de-9402-dacabf5bd155" class="">
+</p><p id="1d4e0d55-928c-4cd2-8452-8c9a9d9ed8bb" class=""><span style="border-bottom:0.05em solid"><strong>Preenchimento automático geral</strong></span></p><p id="d86e424a-661d-4972-9ac7-1b74b2781a54" class="">Para configurar o preenchimento automático do formulário inteiro, basta configurar o parâmetro “autocomplete” dentro do elemento “form”, confira abaixo:</p><pre id="62f2f6c0-f340-4817-bc5f-aa6bc6ec9787" class="code"><code>&lt;form autocomplete=&quot;off&quot;&gt;
+        
+&lt;/form&gt;</code></pre><ul id="afb81ab8-97b8-42c3-b23c-60d2bd7068f9" class="bulleted-list"><li style="list-style-type:disc">off - preenchimento automático desligado</li></ul><ul id="a3f79876-e352-4845-a693-b0c919db748c" class="bulleted-list"><li style="list-style-type:disc">on - preenchimento automático ligado</li></ul><ul id="cc492eb1-9a99-4e6c-934e-c35b17f1a377" class="bulleted-list"><li style="list-style-type:disc">Por padrão o preenchimento vem ligado</li></ul><p id="3658d524-fc04-4367-937d-ae6a61846359" class="">
+</p><p id="cbef7385-78ad-439c-a409-0708208ad365" class=""><span style="border-bottom:0.05em solid"><strong>Preenchimento automático específico</strong></span></p><p id="9d7302cc-3713-4857-8be0-114dcab3bb27" class="">Para indicar ao navegador qual o tipo de preenchimento que o input deve receber, você deve configurar o parâmetro “autocomplete” dentro do input, confira abaixo:</p><pre id="10fa45a0-918d-4cb4-8d2b-fa589f5d30dd" class="code"><code>&lt;input type=&quot;text&quot; autocomplete=&quot;&quot;&gt;</code></pre><ul id="222c1a08-ee34-4b1c-9040-0606df8bc0f1" class="bulleted-list"><li style="list-style-type:disc">Existem diversos valores que você pode colocar em “autocomplete”</li></ul><ul id="ee53c5fc-bd3f-4bdb-b8ee-dec5a6a1405f" class="bulleted-list"><li style="list-style-type:disc">Você deve colocar o valor que corresponde a o que você deseja que o usuário digite dentro do input</li></ul><ul id="bda2283b-58e6-40f5-8a7a-2b87ce3ce16f" class="bulleted-list"><li style="list-style-type:disc">Exemplo: se você estiver pedindo uma nova senha ao usuário, coloque autocomplete=”new-password”</li></ul><ul id="57a87b52-a045-488c-9194-a504f72bcf5a" class="bulleted-list"><li style="list-style-type:disc">Ao fazer isso, o navegador irá indicar um preenchimento que faça sentido para aquela caixa de texto em específico</li></ul><p id="0c893569-a26e-44f3-8b88-52edaa490040" class="">
+</p><p id="179088fd-5a77-431a-aa79-192e8e168793" class=""><span style="border-bottom:0.05em solid"><strong>Caixas de preenchimento obrigatório</strong></span></p><p id="7934d57b-f8d1-493b-a454-2d41bbaae63d" class="">Para tornar o preenchimento de uma caixa obrigatório basta usar um parâmetro dentro de input, veja abaixo:</p><pre id="6ea3e841-2781-4f91-acae-9ef5e847382d" class="code"><code>&lt;input type=&quot;text&quot; required&gt;</code></pre><ul id="e182652b-e73c-42fa-9f00-a60ddc6a93d6" class="bulleted-list"><li style="list-style-type:disc">Ao colocar o parâmetro “required” dentro do input, torna obrigatório que o usuário preencha a caixa antes de enviar</li></ul><ul id="effc6ee7-c3e3-4c1f-863a-826054ef209a" class="bulleted-list"><li style="list-style-type:disc">O próprio navegador já tem um aviso para caso o usuário não preencha um campo obrigatório</li></ul><p id="75b9b5d9-eaf7-4a4a-91cf-1cf158f50dbf" class="">
+</p><p id="8359378a-bf33-4731-82ba-faaac8dd33f9" class=""><span style="border-bottom:0.05em solid"><strong>Valor padrão</strong></span></p><p id="6a22bbff-96a1-4a16-b3f4-22e7ba6af050" class="">Existe um parâmetro que você pode colocar dentro de um input que determina um valor padrão para ele, um valor padrão que já estará escrito antes do usuário sequer digitar, confira abaixo como fazer:</p><pre id="fc83c864-9776-4db2-b5b5-80e0e87022ee" class="code"><code>&lt;input type=&quot;text&quot; value=&quot;&quot;&gt;</code></pre><ul id="b446c77b-dc2f-45e9-868b-45b954f63b69" class="bulleted-list"><li style="list-style-type:disc">O que você colocar dentro de value será o que por padrão estará escrito ao usuário acessar o formulário</li></ul><p id="3534118d-c31c-4910-9918-f5c2bed3a260" class="">
+</p><p id="b28389d6-323e-4217-a458-8d04ef116293" class=""><span style="border-bottom:0.05em solid"><strong>Valor padrão para data</strong></span></p><p id="e7599df5-ce6e-400a-a6bc-b454ee64c50a" class="">Para adicionar um valor padrão para seu input de data você deve fazer da seguinte forma:</p><p id="3f5fdeb6-2950-4f3f-87ce-03ed40486023" class="">ano-mês-dia</p><ul id="cd4ab95b-38d7-4f9d-84ec-df640e3c6802" class="bulleted-list"><li style="list-style-type:disc">Você deve colocar na sequência acima e separar com um “-”</li></ul><p id="0ad9fe60-ac03-4a76-a11d-4fd9ce3af32e" class="">Exemplo:</p><p id="751c4732-30d6-4385-8293-94f562c00542" class="">Por padrão quero que fique 5 de abril de 2007</p><p id="b7f09308-f976-4146-b2da-c442024ec790" class="">Para ficar por padrão a data acima deve digitar em value: 2007-04-05</p><p id="4a473cea-1069-423c-a7ee-2297678170af" class="">
+</p><p id="7d935812-a328-4b05-9d6d-e986a13a14eb" class=""><span style="border-bottom:0.05em solid"><strong>Valor padrão para hora</strong></span></p><p id="ccee2913-3397-4c20-b9cf-77e386d0dd8f" class="">Para adicionar um valor padrão para seu input de hora você deve fazer da seguinte forma:</p><p id="3e7f343e-468b-4083-8908-6bedd1e760ba" class="">hora:minuto</p><ul id="52e7b35e-e9c8-4aff-972e-a05fe851b334" class="bulleted-list"><li style="list-style-type:disc">Você deve colocar na sequência acima e separar com um “:”</li></ul><p id="ea954e74-5247-4a2f-bd41-019a5ae7eee1" class="">Exemplo:</p><p id="70f4f289-9b5d-40fe-a4e2-b0cb16157194" class="">Por padrão quero que meio dia e meia</p><p id="15898182-297c-470b-9d7f-b9a6c11bb979" class="">Para ficar por padrão a hora acima deve digitar em value: 12:30</p><p id="e8e13e5f-8b3d-4929-afc9-b795ec4a77ba" class="">
+</p><p id="3271ebdc-adb8-481d-9834-9d63664467b4" class=""><span style="border-bottom:0.05em solid"><strong>Valor padrão para input:color</strong></span></p><p id="dfde9b3d-1f7a-4640-a3b0-db088aa010bd" class="">Para adicionar um valor padrão para seu input de cor basta colocar dentro de value o código hexadecimal da cor, assim como da seguinte forma:</p><pre id="2e09bddf-419e-4ff7-b7a9-caec7f720ba4" class="code"><code>&lt;input type=&quot;color&quot; value=&quot;#000000&quot;&gt;</code></pre><p id="6ffd8831-003a-46f3-9671-8701742419b6" class="">
+</p><p id="55959038-2c25-4773-b079-e39a13cbcb38" class=""><span style="border-bottom:0.05em solid"><strong>Valor padrão para caixa de marcação</strong></span></p><p id="bd528beb-530e-4c28-9498-6a0bcb117f80" class="">Em um formulário com caixas de marcação, para você deixar uma caixa marcada por padrão basta colocar o parâmetro checked no input referente a caixa, confira a seguir:</p><pre id="f6c13afe-de65-41eb-ae1d-364cda6f9ec0" class="code"><code>&lt;input type=&quot;radio&quot; checked&gt;</code></pre><ul id="df510752-3277-4710-bbbe-e571717d7c3d" class="bulleted-list"><li style="list-style-type:disc">Este parâmetro funciona para os inputs radio e checkbox, porém em radio apenas uma das opções podem estar checked por padrão</li></ul><p id="b0faf02e-ccc5-4438-ba58-868fca878a1a" class="">
+</p><p id="690bbbf6-8e20-4862-af17-42eee3c1038e" class=""><span style="border-bottom:0.05em solid"><strong>Valor inicial, final e padrão do input:range </strong></span></p><p id="4f6dbebb-9d39-4345-b3da-cf8946b40d43" class="">Para configurar o valor do input:range ou seja o valor inicial e final, utilizamos min e max</p><ul id="36b03a26-4a14-45f8-a8e0-fb724c448d02" class="bulleted-list"><li style="list-style-type:disc">Por padrão o input range vai de 0 a 100</li></ul><p id="62c83d3d-4d7b-4d46-b48e-55602d54534b" class="">Se eu quiser que vá de 0 a 5, eu vou ter que colocar o min=0 e o max=5, confira a seguir:</p><pre id="4a5fe43a-3b26-480a-9f45-f02f717acaf1" class="code"><code>&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;5&quot;&gt;</code></pre><ul id="7fdb3747-f6e8-459d-a903-b66ec0fb56b1" class="bulleted-list"><li style="list-style-type:disc">Para configurar o valor padrão do input:range também é com a tag value, porém você deve colocar um valor que esteja dentro do que você configurou como mínimo e máximo</li></ul><p id="d472651a-ad3e-4484-b6cb-34abc29ac0f6" class="">
+</p><p id="d2b7e357-abc9-4ee9-9f29-f15ce2fda50a" class=""><span style="border-bottom:0.05em solid"><strong>Mínimo e máximo de caracteres</strong></span></p><p id="17795311-1c37-4128-b923-f4c80fdbbf28" class="">Para alterar o mínimo e o máximo de caracteres que uma caixa deve ter basta utilizar um parâmetro dentro de input, veja abaixo:</p><p id="c70aeb7c-ac49-4cff-b050-e68a1669dfeb" class="">Mínimo:</p><pre id="59832fae-f561-4809-8f7d-1cbc81d4f144" class="code"><code>&lt;input type=&quot;text&quot; minlength=&quot;&quot;&gt;</code></pre><ul id="109f61e4-bb55-4757-8e57-49f0f93a4ab4" class="bulleted-list"><li style="list-style-type:disc">Dentro de minlength você determina o mínimo de caracteres que devem conter na caixa</li></ul><ul id="21617dea-96ea-45b2-a5cf-a84a3dc0a04e" class="bulleted-list"><li style="list-style-type:disc">Se os dados escritos na caixa não atenderem ao mínimo de caracteres a caixa deve conter, os dados não serão enviados</li></ul><ul id="f53f3d58-d9e9-4f0d-b130-8aca9a31627a" class="bulleted-list"><li style="list-style-type:disc">O próprio navegador já tem um aviso para caso o usuário escreva menos caracteres que o mínimo que você estipulou</li></ul><p id="82f212e8-a030-4172-9647-0efd23e3d116" class="">Máximo:</p><pre id="e13124e2-48ce-4788-af99-e764caa107f9" class="code"><code>&lt;input type=&quot;text&quot; maxlength=&quot;&quot;&gt;</code></pre><ul id="0350d6e1-8204-4c16-b4b3-79e5a2885bec" class="bulleted-list"><li style="list-style-type:disc">Dentro de maxlength você determina o máximo de caracteres que devem conter na caixa</li></ul><ul id="420bfb98-3b72-4d91-b87c-a1b2494e934c" class="bulleted-list"><li style="list-style-type:disc">Se os dados escritos na caixa excederem o máximo de caracteres a caixa pode conter, os dados não serão enviados</li></ul><ul id="a9eff833-2712-4a8a-9959-391a802c319d" class="bulleted-list"><li style="list-style-type:disc">O próprio navegador já tem um aviso para caso o usuário escreva mais caracteres que o máximo que você estipulou</li></ul><p id="195e4abc-d702-449e-97af-314e8d6e8c67" class="">
+</p><p id="c695247e-c5b1-49d3-8bdd-628ffc7ea544" class=""><span style="border-bottom:0.05em solid"><strong>Mínimo e máximo de caracteres no input:number</strong></span></p><p id="d4be4b2b-11c0-4b81-bcb7-88ce63e616ef" class="">Máximo:</p><p id="c84ed81a-49cb-4320-8704-5d0861ebc0d1" class="">Para o input:number ao invés de maxlength usamos apenas max</p><p id="7e5aa3b0-269f-4fd1-a459-46cef02ab2e8" class="">Confira abaixo:</p><pre id="4a5908ff-d38c-46a8-8d2b-6ecab606a8df" class="code"><code>&lt;input type=&quot;number&quot; max=&quot;&quot;&gt;</code></pre><p id="4bc330ef-4a1b-415e-8976-594f87809037" class="">Mínimo</p><p id="3d7391d4-40ef-41ef-9766-92e7129aad36" class="">Para o input:number ao invés de minlength usamos apenas min</p><p id="29f265c5-c240-4e48-89d8-235df6942e7e" class="">Confira abaixo:</p><pre id="51b82305-0958-430a-bf7f-68700a8b9df5" class="code"><code>&lt;input type=&quot;number&quot; min=&quot;&quot;&gt;</code></pre><p id="0f671203-bf85-44b6-a307-89ddba2ab70e" class="">
+</p><p id="b1b3067b-850d-4789-af5b-341c8b9f8b02" class=""><span style="border-bottom:0.05em solid"><strong>input:number números decimais</strong></span></p><p id="fb95f48d-165c-4bcc-8bb4-2debdbe40b54" class="">Por padrão não é possível digitar números com décimos dentro do input number</p><p id="7912f515-e3e2-4ce2-a613-c9e58df96e50" class="">Para tornar possível você deverá alterar a espera entre os números</p><p id="94bd5628-fb48-4f3f-a6ce-e74af5db188f" class="">Por padrão a espera é de 1, então, os valores aceitos aumentam de 1 em 1, ou seja, só aceita números inteiros</p><p id="fff6f59c-e84b-4495-a222-1807d60f6df4" class="">Veja abaixo com alterar isso:</p><pre id="372b245d-2b21-41a2-b200-23844292f24f" class="code"><code>&lt;input type=&quot;number&quot; step=&quot;0.1&quot;&gt;</code></pre><p id="bd7d1116-6476-4c30-94f2-a8e80b3f3b34" class="">Ao fazer isso os valores aceitos vão aumentando em 0.1, assim fica possível adicionar números decimais</p><p id="e003d7ba-cd9a-47e4-b912-b413c7e24416" class="">
+</p><p id="f4daae9d-d853-4195-ab47-da24dc36760e" class=""><span style="border-bottom:0.05em solid"><strong>Caixas de marcação múltipla</strong></span></p><p id="939a128d-ba6d-4227-be59-c6c1051dec75" class="">Para criar um formulário com caixas de marcação, e com o usuário podendo selecionar várias caixas, você deverá usar a tag input:checkbox, confira a seguir:</p><pre id="23b23221-28a7-4433-b146-f1de03090a61" class="code"><code>&lt;input type=&quot;checkbox&quot;&gt;</code></pre><ul id="5eb7d3d4-26b9-4978-a51c-22ac3d555d53" class="bulleted-list"><li style="list-style-type:disc">Para esse tipo de input o mais comum é colocar label após o input, porém você pode colocar na ordem que desejar contanto que ligue o “id” com “for”</li></ul><ul id="99640d3f-975d-41c9-8a23-a5775c27101d" class="bulleted-list"><li style="list-style-type:disc">Exemplo de código a seguir:</li></ul><pre id="b30bd81b-33a8-441d-ba85-32a9785ffafc" class="code"><code>&lt;form action=&quot;cadastro.php&quot; method=&quot;get&quot; autocomplete=&quot;on&quot;&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;Esporte Favorito&lt;/legend&gt;
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;input type=&quot;checkbox&quot; name=&quot;bas&quot; id=&quot;bas&quot;&gt;
+                &lt;label for=&quot;bas&quot;&gt; Basquete&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;input type=&quot;checkbox&quot; name=&quot;fut&quot; id=&quot;fut&quot;&gt;
+                &lt;label for=&quot;fut&quot;&gt; Futebol&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;input type=&quot;checkbox&quot; name=&quot;vol&quot; id=&quot;vol&quot;&gt;
+                &lt;label for=&quot;vol&quot;&gt; Vôlei&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;br&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;</code></pre><ul id="dc7fa8db-0749-4365-9b58-1e7a64d4fc02" class="bulleted-list"><li style="list-style-type:disc">Resultado visual:</li></ul><figure id="006e7655-8f39-4f97-8661-548322e904de" class="image" style="text-align:left"><a href="Caixas%20de%20resposta%20(c%20input)%207b6dbb8528ef453d9771881ef9085c10/checkboxhtml.png"><img style="width:368px" src="Caixas%20de%20resposta%20(c%20input)%207b6dbb8528ef453d9771881ef9085c10/checkboxhtml.png"/></a></figure><ul id="86b08cfa-9e36-491b-a428-8be5352b1bd8" class="bulleted-list"><li style="list-style-type:disc">O usuário pode marcar diversas caixas</li></ul><p id="314f830d-f162-404f-8efc-b80166bfaa8c" class="">
+</p><p id="6a0510ae-59ab-4029-ad33-ead621203aa6" class=""><span style="border-bottom:0.05em solid"><strong>Caixas de marcação única</strong></span></p><p id="e599a3ba-920d-4d89-9744-a002bbbc7e33" class="">Para criar um formulário com caixas de marcação, e com o usuário podendo selecionar apenas uma das caixas, você deverá usar a tag input:radio, confira a seguir:</p><pre id="d03e3ddc-b3df-4378-a525-f16624cad122" class="code"><code>&lt;input type=&quot;radio&quot;&gt;</code></pre><ul id="23eba2f9-8a80-4d8f-b270-08cd321eb5dd" class="bulleted-list"><li style="list-style-type:disc">Para esse tipo de input o mais comum é colocar label após o input, porém você pode colocar na ordem que desejar contanto que ligue o “id” com “for”</li></ul><ul id="ab9a1ef2-4cb0-41c8-8333-c1a14bc4ff16" class="bulleted-list"><li style="list-style-type:disc">Os inputs radio deverão ter o mesmo “name” se não tiver não funcionará corretamente</li></ul><ul id="3f55e141-f56c-45c3-8aca-bccf8639bde4" class="bulleted-list"><li style="list-style-type:disc">Exemplo de código a seguir:</li></ul><pre id="8fa0844e-8fc8-44e6-8fdb-060dad615e3a" class="code"><code>&lt;form action=&quot;cadastro.php&quot; method=&quot;get&quot; autocomplete=&quot;on&quot;&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;Sexo&lt;/legend&gt;
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;fem&quot;&gt;
+                &lt;label for=&quot;fem&quot;&gt;Feminino&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;mas&quot;&gt;
+                &lt;label for=&quot;mas&quot;&gt;Masculino&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;br&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;</code></pre><ul id="3e743938-2d4b-48a3-a76a-466ecfab8531" class="bulleted-list"><li style="list-style-type:disc">Resultado visual:</li></ul><figure id="50a985b8-a593-4091-bf08-28d370e4067f" class="image" style="text-align:left"><a href="Caixas%20de%20resposta%20(c%20input)%207b6dbb8528ef453d9771881ef9085c10/radiohtml.png"><img style="width:338px" src="Caixas%20de%20resposta%20(c%20input)%207b6dbb8528ef453d9771881ef9085c10/radiohtml.png"/></a></figure><ul id="a0ff3cdd-0404-4c0e-99a6-d55fd7359b3a" class="bulleted-list"><li style="list-style-type:disc">O usuário só vai poder marcar uma única caixa, se ele tentar marcar duas a outra irá se desmarcar</li></ul><p id="e65ef5c2-430d-4c89-808d-d20cbff33eef" class="">
+</p><p id="9ca68b57-9464-4506-8f38-7447a441b0e2" class=""><span style="border-bottom:0.05em solid"><strong>Caixa de envio</strong></span></p><p id="d7f17dbc-b94e-492e-9bea-8a365eeda060" class="">Todo formulário deve ter um botão para que o usuário possa mandar as respostas</p><p id="9bdd2768-d16f-4c51-beb3-286daa83e783" class="">Para criar esse botão você também irá usar um input</p><p id="4f2b3faf-f37f-4337-a5a8-f4cd571c2b9d" class="">O input para criar essa caixa se chama input:submit</p><pre id="4a763a32-333e-4108-9b0a-ddb6dbd63eb1" class="code"><code>&lt;input type=&quot;submit&quot; value=&quot;&quot;&gt;</code></pre><ul id="5229064a-809b-475f-bd0e-0f1cb8b78dd1" class="bulleted-list"><li style="list-style-type:disc">Dentro de value você coloca o que você deseja que esteja escrito dentro da caixa</li></ul><p id="3ec8d133-94ab-49ff-bb46-1e31fc4b7c40" class="">
+</p><p id="c49f2c47-6e84-443c-8d33-7c9efb34f4bc" class=""><span style="border-bottom:0.05em solid"><strong>Caixa de limpeza</strong></span></p><p id="fea48273-ccb0-4505-9941-1a4cadeccd83" class="">Alguns formulários tem um botão para limpar o que o usuário escreveu dentro das caixas de texto</p><p id="aeffdded-b9ed-4f20-b267-dcbaf9951ef8" class="">Para criar esse botão você também irá usar um input</p><p id="d9b5de07-c755-4952-8603-8715099bd782" class="">O input para criar essa caixa se chama input:reset</p><pre id="95f84ecf-18fc-4ba3-9c18-78112b9ccf4d" class="code"><code>&lt;input type=&quot;reset&quot; value=&quot;&quot;&gt;</code></pre><ul id="893fd75d-c69c-498e-8ae1-0173f1f0c902" class="bulleted-list"><li style="list-style-type:disc">Dentro de value você coloca o que você deseja que esteja escrito dentro da caixa</li></ul><p id="c54951c1-9c8f-4203-b973-44136fa198e7" class="">
+</p><p id="2a5282b2-a965-47ff-8699-3d71c4a2c132" class=""><span style="border-bottom:0.05em solid"><strong>Propriedades do imput file</strong></span></p><ul id="eb02851b-3e74-4d1a-9f01-40b857caf9e3" class="bulleted-list"><li style="list-style-type:disc">Ao usar o imput file, você deverá usar o método post, pois se você não usar o arquivo que o usuário selecionou não será enviado</li></ul><ul id="6882cc96-0087-4431-b241-d2c75cae6cce" class="bulleted-list"><li style="list-style-type:disc">No imput file você também deverá usar o parâmetro enctype=&quot;multipart/form-data&quot;, da seguinte forma:</li></ul><pre id="47ac9169-87fe-4a81-b173-e43f8acdeef9" class="code"><code>&lt;input type=&quot;file&quot; name=&quot;arquivo&quot; id=&quot;arquivo&quot; enctype=&quot;multipart/form-data&quot;&gt;</code></pre><p id="0e598455-7433-4e7d-aade-d3d7c223662d" class="">
+</p><p id="d9b65f4b-1ed6-4865-acb2-ff3c1d37d075" class=""><span style="border-bottom:0.05em solid"><strong>Programação para quando o usuário inserir dados na caixa de resposta</strong></span></p><p id="4e18c18c-6797-464f-8e6f-cff5c17878e9" class="">Você pode usar um parâmetro nas suas caixas de respostas que tem o nome de “oninput”, este parâmetro ativa uma função toda vez que o usuário adicionar ou trocar um dado dentro do input, veja a seguir:</p><pre id="e2b77e89-17bb-46d9-8546-b107ec4eb99c" class="code"><code>&lt;input type=&quot;number&quot; oninput=&quot;&quot;&gt;</code></pre><ul id="7d339b22-d30e-48ec-a950-eed043ee0e6a" class="bulleted-list"><li style="list-style-type:disc">Toda vez que o usuário colocar ou trocar um dado vai ativar a função javascript que estiver dentro do parâmetro “oninput”</li></ul></div></article></body></html>

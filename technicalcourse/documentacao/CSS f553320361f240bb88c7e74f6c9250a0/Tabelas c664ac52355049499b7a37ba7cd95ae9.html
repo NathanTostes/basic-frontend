@@ -1,0 +1,727 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tabelas</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c664ac52-3550-4949-9b7a-37ba7cd95ae9" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📑</span></div><h1 class="page-title">Tabelas</h1><p class="page-description"></p></header><div class="page-body"><p id="21cb1aca-ad4c-4169-9fd2-59c1d4a0ea5e" class="">
+</p><h2 id="974441af-6522-47c1-9db6-fc39baa337dc" class="">Retirar espaço entre células</h2><p id="002beaef-965c-42dd-aa63-2c30c729a77e" class="">
+</p><p id="00e7d454-d64f-490b-a612-d4e933d2fb93" class="">Por padrão cada célula vem com um espaço entre elas, para retirar este espaçamento basta usar o parâmetro a seguir:</p><pre id="d313d447-e092-444c-a87a-1c4c9391cc40" class="code"><code>table{
+            border-collapse: collapse;
+        }</code></pre><ul id="f5556cdc-6156-413d-a678-8d84dd5811d3" class="bulleted-list"><li style="list-style-type:disc">Por padrão o valor de border-collapse vem como separate (faz as bordas terem espaço entre si)</li></ul><p id="cd654b44-2546-4ac9-9c02-6ad4508d33a6" class="">
+</p><h2 id="b252d33a-3dd1-411d-a11d-48d20ad8772d" class="">Largura/Altura da Tabela</h2><p id="0b40ac40-d8d3-40d2-8722-e17ce8cb2e92" class="">
+</p><p id="75312478-796f-4a9f-b919-bd7f54922133" class="">Para tabela ficar mais larga/alta aumente a width/height da tabela, pois a largura/altura das colunas/linhas se adapta automaticamente para preencher toda a tabela</p><p id="f465c1ad-2fbd-4682-8801-7859c4ac7daf" class="">
+</p><h2 id="be71a20f-6aea-43ef-b77e-f1b038282da2" class="">Distância do conteúdo para linha</h2><p id="07e5b998-306c-4f5f-8387-3c5a30a93d06" class="">
+</p><p id="7dbada0b-32be-46d7-9be9-e26c7c3845c1" class="">Se um conteúdo de uma tabela estiver muito colado com as linhas o recomendado é amentar o padding do td</p><p id="8ceeb53b-0fb3-4f1c-9351-344aeb15e3ab" class="">
+</p><h2 id="98a4c080-dc6b-489c-919f-4e16acc4a8bd" class="">Alinhar conteúdo de uma célula</h2><p id="8cf8e211-c4e2-43d5-b2dc-8ebdafa66713" class="">
+</p><p id="e2c5f8e2-5f46-419d-a90c-0dc300a3731f" class=""><span style="border-bottom:0.05em solid"><strong>Para alinhar horizontalmente use o seguinte parâmetro:</strong></span></p><pre id="a7373415-2252-49b9-af4d-c8b1a9635833" class="code"><code>td{
+            text-align: center;
+        }</code></pre><p id="9ccf1efb-99a4-4ec1-a4f3-808df11da748" class="">
+</p><p id="ade6a08d-239a-4025-a0b9-e8b29a631631" class="">
+</p><p id="dbe8cb93-a807-4c60-8c47-8765969da1a9" class=""><span style="border-bottom:0.05em solid"><strong>Para alinhar verticalmente use o seguinte parâmetro:</strong></span></p><pre id="5a393e0a-deeb-45d6-96db-1b63c3ccdf22" class="code"><code>td{
+            vertical-align: middle;
+        }</code></pre><ul id="185b4ff1-cbdb-442b-9116-48e2fc598478" class="bulleted-list"><li style="list-style-type:disc">O uso do parâmetro vertical-align é recomendado só para tabelas</li></ul><p id="31852666-4727-4128-895a-3ca6ed1e4666" class="">
+</p><h2 id="a69b59ea-ea0b-48b0-a116-d286d0a444c6" class="">Zebrado</h2><p id="76d9b954-7be9-4eb5-84cf-d47e48791dcb" class="">
+</p><p id="7345e186-bf16-479b-a05d-03950212b493" class="">Para criar o efeito zebrado em sua tabela você deverá usar a seguinte pseudo-class:</p><pre id="aa1b2845-5fa7-41b6-b07b-edc6d450a309" class="code"><code>tr:nth-child(2n){
+            background-color: #777777;
+        }</code></pre><p id="b37efaf7-785b-470a-aad0-219224d73370" class="">A pseudo-class se chama nth-child(), dentro do parênteses se coloca um valor, exemplo:</p><p id="12921339-eb57-492f-b568-baccbaeeb81f" class=""><span style="border-bottom:0.05em solid"><strong>2n</strong></span> - Significa que a cada 2 elementos um deles receberá este estilo</p><p id="ba5e5385-6a07-44d0-b99b-74f85a620051" class=""><span style="border-bottom:0.05em solid"><strong>2n-1</strong></span> - Significa que a cada 2 elementos um deles receberá este estilo, porém a regra começa a ser aplicada um elemento antes (isso faz com que a ordem do zebrado se inverta)</p><p id="2fab6ef5-973c-4368-b69a-5bcc2fb0b499" class="">
+</p><h2 id="3b40ca13-331f-42e8-a971-1ac06ca54fe8" class="">Cabeçalho fixo</h2><p id="1f648501-e125-448d-946c-e8f451f3396b" class="">
+</p><p id="fc1652d0-5813-4137-b21c-3df36dc6bdfc" class="">Para tornar o cabeçalho de uma tabela fixo primeiro teremos que trocar o position de table para relative, assim como a seguir:</p><pre id="d4a94d8f-4520-49ba-a782-eac63063e78f" class="code"><code>table{
+            position: relative;
+        }</code></pre><p id="50cfacd1-0c76-45fe-878d-92dd87e5b5d9" class="">
+</p><p id="16a67454-c599-413c-8dc0-12b11a7711c9" class="">Após isso teremos que alterar o position do título(th) para sticky, assim como a seguir</p><pre id="97a7c3a6-5321-4509-a7d5-a995c866cdc1" class="code"><code>thead &gt; tr &gt; th{
+            position: sticky;
+        }</code></pre><ul id="856f28e4-5d39-4c72-9f05-9cc837dcb100" class="bulleted-list"><li style="list-style-type:disc">Para indicar th é recomendado indica-lo assim como podemos ver acima (como elemento filho)</li></ul><p id="da38fc84-2a3d-4f6f-aeee-d6d07bd22c88" class="">
+</p><p id="35249094-bd4f-41df-8eef-30e47e04d18d" class="">Depois teremos que configurar aonde da tabela o cabeçalho irá se fixar, assim como a seguir:</p><pre id="da34a1d1-4f80-49af-9cc5-1d27d0fed7de" class="code"><code>thead &gt; tr &gt; th{
+            top: -1px;
+        }</code></pre><ul id="6494e600-9dee-47db-b8b6-a21686283928" class="bulleted-list"><li style="list-style-type:disc">Ao colocar o valor de top como 0px temos um pequeno espaço que não é coberto encima, por isso, é recomendado colocar como -1 para que não fique com este espaçamento</li></ul><p id="60fea374-550a-4b53-a662-8322d8e318b4" class="">
+</p><ul id="71e07ffd-5eb7-4464-8864-ebe2e058b9e5" class="bulleted-list"><li style="list-style-type:disc">Ao usar os comandos acima apenas o texto do cabeçalho se fixa ao topo da tabela, seu fundo não se fixa, então temos que colocar junto das configurações anteriores a cor de fundo do elemento</li></ul><p id="fbb97de5-526e-46c1-9a00-ed81d38e52d2" class="">
+</p><h2 id="f8495a03-c196-403a-8707-0afd21247275" class="">Personalização de Colunas</h2><p id="ac7fe6b1-aa63-4c32-9b6d-a59a9d9ab0d0" class="">
+</p><p id="2037ee01-b1d9-4020-89e8-2393339773c9" class="">Temos um parâmetro que permite indicar uma coluna inteira da tabela de forma simples, e com esse parâmetro torna mais fácil personalizar uma coluna, já que por esse parâmetro indicar toda a coluna se personalizamos ele toda a coluna é personalizada, confira abaixo como se usa este parâmetro:</p><p id="e61ee292-6165-46cc-8ed3-ae1a27869dce" class="">
+</p><p id="b1d096fd-630a-4b93-a948-bdcda77196d1" class="">Primeiramente você deve colocar dentro de table o parâmetro colgroup</p><pre id="afa8c31d-0adf-4408-ac7b-933ada809ab3" class="code"><code>&lt;colgroup&gt;
+            
+&lt;/colgroup&gt;</code></pre><p id="6e668256-f2ae-4548-8906-9b47c3d5d02b" class="">
+</p><p id="9db9f4ec-8255-4db1-bfd4-845e27e349b3" class="">Dentro dele você indicará cada coluna usando o parâmetro col</p><pre id="b1ea8915-e1be-4562-b9b1-f607eeb625da" class="code"><code>&lt;colgroup&gt;
+            &lt;col&gt;
+            &lt;col&gt;
+            &lt;col&gt;
+            &lt;col&gt;
+&lt;/colgroup&gt;</code></pre><ul id="ced71c2b-5f6e-4d00-b08f-ae1735a03110" class="bulleted-list"><li style="list-style-type:disc">O primeiro col é respectivo a primeira coluna da tabela, o segundo col à segunda coluna, o terceiro col à terceira coluna, e assim respectivamente</li></ul><p id="58bb4561-d7b1-4d4e-9643-e8c77a413976" class="">
+</p><p id="bc52a737-b262-4236-b340-87fa173e471e" class="">Com esses parâmetros que sozinhos indicam uma coluna inteira, torna mais fácil adicionar um estilo à coluna, pois basta alterar o estilos desses parâmetros, como podemos ver abaixo:</p><pre id="9805ca2d-6c8b-4a3f-a99d-5932c2c1ba9f" class="code"><code>&lt;col id=&quot;ColImportante&quot;&gt;</code></pre><p id="ecf20d05-45e5-4488-a003-26ce2d4911a8" class="">No exemplo acima basta alterar o estilo do id que a coluna inteira seguirá este estilo</p><p id="d1d1f09c-f2cc-4866-a620-8b9c841de777" class="">
+</p><p id="6284b29e-6934-48e9-9495-398a727ae7fa" class="">Se uma dessas colunas tiver span ela vai se referir a mais de uma coluna, como no exemplo abaixo, o parâmetro col vai referir a duas colunas (Exemplo: Se a segunda coluna tiver dois de span, vai se referir a segunda e terceira coluna, e com isso o próximo col que for colocado em colgroup vai se referir à quarta coluna)</p><pre id="09b73593-d167-41bb-bbbc-5d98e7f62682" class="code"><code>&lt;col span=&quot;2&quot;&gt;</code></pre><ul id="e166245a-d624-4041-8145-a76f9f99521a" class="bulleted-list"><li style="list-style-type:disc">É mais recomendado colocar um col para cada coluna em colgroup e dar estilo separadamente para elas (sem usar span)</li></ul><p id="9e02e163-33bd-4dad-a404-995cb9a0acbb" class="">
+</p><h2 id="1f2c2c2d-c068-45e2-b955-f9cf7148de48" class="">Tabelas Responsivas</h2><p id="61dceae4-df1d-4549-b7bc-9dc2ef09f7d1" class="">
+</p><p id="d514aa44-feb1-426d-a3f1-16733e666a39" class="">Para tornar responsiva uma tabela que é muito larga e em aparelhos ou telas menores cria rolagem lateral no site, basta seguir os passos a seguir:</p><p id="3bae8212-4eb1-4307-8a74-72607649f37b" class="">
+</p><p id="b542058e-9b97-4aa9-9ce0-9bbe0210df59" class="">Primeiramente envelope toda sua tabela em uma div</p><p id="6f4525b8-eace-4a0d-8cf4-c838c6b12cf2" class="">
+</p><p id="923b1a24-6e6e-4f03-966d-2e4460f6e106" class="">Depois disso basta configurar essa div usando um parâmetro, como a seguir:</p><pre id="557bfc32-6548-4466-ae57-c48dc75db5a1" class="code"><code>div#tab{
+            overflow-x: auto;
+        }</code></pre><p id="448dac0b-4b44-498d-8e0f-f1670c5455ac" class="">
+</p><ul id="2da54bc5-7709-4341-baec-b1fd0dcdcb5a" class="bulleted-list"><li style="list-style-type:disc">Overflow significa todo o conteúdo que ultrapassa a tela</li></ul><ul id="6d19e49a-280f-48eb-b742-3f644bc918e9" class="bulleted-list"><li style="list-style-type:disc">Temos o parâmetro overflow, que configura os conteúdos que ultrapassam verticalmente e horizontalmente o tamanho da tela</li></ul><ul id="4247ee3a-5991-43f6-a92e-3ace1d7ca09f" class="bulleted-list"><li style="list-style-type:disc">Temos o parâmetro overflow-x, que configura os conteúdos que ultrapassam horizontalmente o tamanho da tela</li></ul><ul id="a431f6c7-9d57-4dcc-9bd4-aa11703b96dd" class="bulleted-list"><li style="list-style-type:disc">Temos o parâmetro overflow-y, que configura os conteúdos que ultrapassam verticalmente o tamanho da tela</li></ul><ul id="6968a468-124e-4956-b01d-25a6cfa9b965" class="bulleted-list"><li style="list-style-type:disc">Ao o setar como auto, ele irá criar uma barra de rolagem dentro da div, se os conteúdos da div forem maiores que a tela</li></ul></div></article></body></html>

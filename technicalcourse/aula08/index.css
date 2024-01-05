@@ -1,0 +1,15 @@
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 20px;
+}
+
+.cx {
+    background-color: blue;
+    margin: 5px;
+}
+
+.cx p {
+    color: white;
+    font-size: 3em;
+}

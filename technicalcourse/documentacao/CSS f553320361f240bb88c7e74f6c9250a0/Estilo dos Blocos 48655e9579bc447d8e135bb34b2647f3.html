@@ -1,0 +1,751 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Estilo dos Blocos</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="48655e95-79bc-447d-8e13-5bb34b2647f3" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🔲</span></div><h1 class="page-title">Estilo dos Blocos</h1><p class="page-description"></p></header><div class="page-body"><p id="4c5cf991-4608-4969-9046-088c82f51f17" class="">
+</p><h2 id="b267e217-859d-43fa-8aed-473759431078" class="">Borda</h2><p id="5d4f3d4a-7a47-4361-bc3d-2455e0b4f87e" class="">
+</p><p id="e793c3e3-f648-49c9-9813-efbc721bb34e" class="">Você pode configurar a borda de um elemento, e configurar seu raio, sua forma, sua cor, sua sombra</p><p id="78fdf581-b495-46a0-94b1-569e853949da" class="">
+</p><p id="3dd709b2-7f19-4a90-ba8c-79dd1ae58b14" class=""><span style="border-bottom:0.05em solid"><strong>Forma da borda</strong></span></p><pre id="759eb95b-a39a-4b86-9e1d-dfe0394a126a" class="code"><code>border-style: solid;</code></pre><p id="39554ac1-a154-4ee8-b55e-7477120348c2" class="">
+</p><ul id="d12bd57b-7e8d-42e4-ad8e-1efa33eecb81" class="bulleted-list"><li style="list-style-type:disc">Tipos de formas para as bordas abaixo:</li></ul><p id="758017c0-1c66-43a8-ace7-1503441fff74" class="">
+</p><p id="792e3f46-8d77-4156-a15c-9bbcb8223441" class="">solid - Borda preenche todo o espaço</p><p id="40b9b703-d511-4632-a1ab-7378faa10941" class="">dashed - Borda pontilhada por linhas</p><p id="17c2c5e0-840b-4f5d-854b-e1eb789d6b90" class="">dotted - Borda pontilhada por bolinhas</p><p id="5739fadc-69f8-45b4-a02d-fbd13ad1feba" class="">double - Linha dupla</p><p id="84cb69a2-e22e-4e31-b0cd-7ae6eead63e5" class="">groove - Borda tridimencional</p><p id="33c457a2-3ef1-4b49-822f-be588a489c94" class="">
+</p><p id="aa945499-3969-4a2c-b049-c460a38b9535" class=""><span style="border-bottom:0.05em solid"><strong>Cor da borda</strong></span></p><pre id="764db89c-ed6e-476e-9dd9-8e3f98ce49cf" class="code"><code>border-color: black;</code></pre><p id="26b0ac06-f233-4cb7-8726-63b7251cfd4e" class="">
+</p><p id="084a0a98-aa57-49bc-a045-8e1176f709e8" class=""><span style="border-bottom:0.05em solid"><strong>Largura da Borda</strong></span></p><pre id="87a4496e-76ea-4e04-83c4-76d8250e42ba" class="code"><code>border-width: 5px;</code></pre><p id="b61a8bd6-520c-4693-85b3-994e50141397" class="">
+</p><h2 id="6e0e18f0-cfcd-47a9-bb17-a50f1ae81403" class="">Bordas Arredondadas</h2><p id="6178983d-a59a-4d54-97ab-19de8efe2b1e" class="">
+</p><ul id="f4362db5-2d1b-4b5c-a2a2-5569be7fe824" class="bulleted-list"><li style="list-style-type:disc">O estilo abaixo configura todas as extremidades</li></ul><pre id="1b2685d9-d289-452a-b43e-e8d99cf82d00" class="code"><code>border-radius: 10px;</code></pre><p id="346a9f0d-5d76-4579-a2b5-6d8c7cd6699b" class="">
+</p><p id="de2d04a5-b2cc-4541-90de-5d95f795f0a7" class="">Quanto maior o tamanho que você escolher maior será o arredondamento</p><p id="0398d21c-730e-4448-ad0c-b35bf0d002d0" class="">
+</p><ul id="b26dc48f-e2ae-47cf-8b54-bbc5371b6f21" class="bulleted-list"><li style="list-style-type:disc">Para  configurar cada extremidade em específico com um arredondamento basta fazer como no código abaixo</li></ul><pre id="39d0d28d-5fec-4498-80a7-84cd1385bb5a" class="code"><code>border-radius: 0px 10px 0px 10px;</code></pre><p id="52aefd91-3007-49e7-a88c-390841af4588" class="">A ordem do que cada parâmetro muda é: cima esquerda, cima direita, baixo direita, baixo esquerda</p><p id="cb43dad3-cec1-43c8-9601-e36751110e40" class="">
+</p><ul id="a70fd3dc-dca3-4564-9b34-950ba2a57f20" class="bulleted-list"><li style="list-style-type:disc">Você pode configurar cada extemidade de uma vez em estilos diferentes</li></ul><ul id="cb50fa3c-8e79-460e-a4bf-56d81368f692" class="bulleted-list"><li style="list-style-type:disc">No exemplo abaixo configuramos o canto superior esquerdo</li></ul><pre id="773e8887-7a88-44be-8407-f35df8156ca4" class="code"><code>border-left-top-radius: 10px;</code></pre><p id="23749451-e450-4d2d-a8a7-e684a2916eb9" class="">
+</p><ul id="3771fbd3-4b46-488e-a863-723e60bb212b" class="bulleted-list"><li style="list-style-type:disc">Você também pode usar porcentagem para definir o arredondamento</li></ul><p id="abeb515b-0617-4d5c-9fc8-70836b026935" class="">Com 50% de arredondamento e se a altura for igual a largura, fica um circulo perfeito</p><p id="2bc07d18-bb3b-4e41-9c32-cf0baf99c34a" class="">
+</p><h2 id="23ec1f62-598e-4176-a06c-2dde7f521572" class="">Borda Interna</h2><p id="2fce218f-9726-4b5d-a04f-19da58454a8f" class="">
+</p><p id="4351726e-719c-4ed3-8392-060e65a4bbb0" class="">A borda de um elemento, por padrão, fica por fora da box do elemento</p><p id="59867568-cdc5-4e68-b6a0-fd8f3447b3aa" class="">Para fazer com que a borda seja dentro da box do elemento, configure o elemento da seguinte forma:</p><pre id="1dd6ead2-a4a8-4335-b35e-3301edf6863e" class="code"><code>section#redes-sociais img {
+    box-sizing: border-box;
+}</code></pre><p id="79de52dc-bf0e-42e6-abf6-6a114a68e921" class="">Ao adicionar o parâmetro acima a borda começa a fazer parte do tamanho da box</p><p id="56e6b852-54fe-4267-8a6e-ed1bb3500427" class="">
+</p><h2 id="314dc1eb-14fd-49c8-9088-b94ee02a3ac0" class="">Borda Externa</h2><p id="5139fc3b-8318-4b41-a4f5-82834e82ec7e" class="">
+</p><p id="b1ba11c5-b4f8-4bd4-bf9c-e2de4cf27293" class="">Quanto maior você escolher maior será o raio da borda</p><p id="3f4b221b-fe67-4c42-beb6-bdf843a0c761" class=""> Você pode designar uma imagem para ser sua borda, ou seja, fazer uma borda personalizada</p><ul id="5a485dbb-5767-4fc5-a0c5-61b56ed90f5d" class="bulleted-list"><li style="list-style-type:disc">Você precisa de adicionar uma borda antes de adicionar a borda personalizada, caso contrário nem aparecerá a borda</li></ul><p id="d07e0485-9fb4-476a-a161-742b9f66444b" class="">
+</p><ul id="3e24aa7d-105b-4033-8b8b-f88b2779b005" class="bulleted-list"><li style="list-style-type:disc">Código para adicionar borda personalizada:</li></ul><pre id="92e50fb6-99ec-4816-9302-466455cf202d" class="code"><code>border-image-source: url(&#x27;imagem.png&#x27;);</code></pre><p id="30944ef4-5b5c-43eb-b289-a07b6c2da68b" class="">
+</p><ul id="bb86b731-dbb5-4fbd-b2eb-f1abe51e2ceb" class="bulleted-list"><li style="list-style-type:disc">Dividir a borda em vários pedaços:</li></ul><pre id="d3d05843-ccad-49ab-837d-dd2689844431" class="code"><code>border-image-slice: 20;</code></pre><p id="b27e57aa-4393-4ac0-b7c6-8c394f2d3c3c" class="">Não precisa ser em medida, basta colocar a quantidade de vezes que irá dividir, quanto maior o número mais divisões terá</p><p id="fdb5f775-5ddc-48a0-b931-f9d69c37702a" class="">
+</p><ul id="dca91e48-8418-4bff-9160-291d774b4a96" class="bulleted-list"><li style="list-style-type:disc">Repetir da borda</li></ul><pre id="b13421c9-bd64-4868-affa-206ec436d3d2" class="code"><code>border-image-repeat: repeat;</code></pre><p id="c681fe6e-ade1-4d34-8c33-27a732baba3d" class="">
+</p><h2 id="2c32fed0-f744-4e2f-962f-2b02a4a48f8b" class="">Contorno</h2><p id="9a26b70a-e9d8-4374-9273-3bd57f81a13c" class="">
+</p><p id="55a3b7f6-857c-4114-980e-3424d97f8175" class="">Para configurar um contorno é da idêntica forma que se configura a borda, o que muda é que o parâmetro usado para configurar e o outline</p><ul id="43b8684d-8349-48c0-af6f-6345652e2427" class="bulleted-list"><li style="list-style-type:disc">Você pode fazer todas alterações que fazem com bordas, com os contornos</li></ul><pre id="92ec14e2-5fb9-4c10-b251-5da115d311d2" class="code"><code>outline-color: #000000;</code></pre><p id="4c8b3c29-0099-4f8c-a841-0d7e3a9d846c" class="">
+</p><h2 id="9315ea1d-9984-4f60-a096-c25724d676db" class="">Sombras</h2><p id="337c6195-933c-4006-b57e-fb8c8c81a092" class="">
+</p><p id="1cdaa640-3943-43d1-9154-5a65fec24626" class=""><span style="border-bottom:0.05em solid"><strong>Sombra da caixa</strong></span></p><pre id="6ec7185f-c421-47a9-9440-7c653517d074" class="code"><code>box-shadow: 1px 1px 1px black;</code></pre><ul id="48ec4f52-6785-4dcf-a083-aff4260a6371" class="bulleted-list"><li style="list-style-type:disc">A forma mais simples de se implementar uma sombra e usando a shorthand box-shadow</li></ul><p id="aad1758f-bd7d-43a8-ab69-3ca92dd557ed" class="">
+</p><p id="0a8252b6-d0b6-4144-a999-9c4e6b5bd72a" class="">Quanto a sombra vai se mover na horizontal - É definida pelo primeiro parâmetro da shorthand</p><p id="3ff50550-4d7f-4139-b04c-4e81213cbbd8" class="">Quanto a sombra vai se mover na vertical - É definida pelo segundo parâmetro da shorthand</p><p id="b90a3152-80d6-438b-90c7-a9f82df40ec0" class="">Espalhamento da sombra - É definida pelo terceiro parâmetro da shorthand</p><p id="ca18f349-8c68-4562-9947-9026442a4564" class="">Cor da sombra - É definida pelo quarto parâmetro da shorthand</p><p id="529faea8-a110-4be2-b589-8a3ec24b421e" class="">
+</p><p id="d399c505-f318-4da7-8687-67acc5c91416" class=""><span style="border-bottom:0.05em solid"><strong>Sombra para todos os lados</strong></span></p><p id="69253966-cefd-48e3-879d-9021b27a968d" class="">Se você quiser uma sombra para todos os lados, deixe o primeiro e o segundo parâmetro da shorthand vazios, e configure apenas o espalhamento (terceiro parâmetro)</p><p id="17780a61-02cc-423c-a79c-3479f8ea2d77" class="">
+</p><p id="9724dd0c-3fec-4805-b102-353263a8fef3" class=""><span style="border-bottom:0.05em solid"><strong>Sombra interna</strong></span> - Para definir uma sombra interna usasse os parâmetros acima mas com o parâmetro inset antes</p><pre id="df734439-03ac-4ea5-b857-f97340ac5f2e" class="code"><code>box-shadow: inset 1px 1px 1px black;</code></pre><ul id="226037eb-4612-4ebf-864a-154fd9c2d2f1" class="bulleted-list"><li style="list-style-type:disc">outset - É a configuração padrão (sombra para fora), utilizada da mesma forma que inset</li></ul><p id="4e9288f7-6ac5-4862-a201-88e7d04a49c8" class="">
+</p><h2 id="83b42853-901f-4ef3-8dc7-33d2598103f3" class="">Margem</h2><p id="a4cea24a-4343-4508-8895-8f2d3f02e2b0" class="">
+</p><p id="a0bc30ea-cb3f-41a1-9075-c66b42e42123" class=""><span style="border-bottom:0.05em solid"><strong>Margem</strong></span> - É configurada pelo parâmetro margin e existem diversas formas de a configurá-la, cada direção em específico ou definir um raio para a margem</p><pre id="a4f48ea8-a949-4c29-85a0-9316c1acfec3" class="code"><code>margin: 1px 1px 1px 1px;</code></pre><p id="be88d2ba-f737-4d32-b64d-6fe899625b77" class="">
+</p><ul id="7db6993c-2833-4653-8f7d-ed0a785034fd" class="bulleted-list"><li style="list-style-type:disc">Para centralizar um bloco dê o valor auto para margin</li></ul><pre id="d4b605df-8a5a-4ea0-b3f3-494afad48f7a" class="code"><code>margin: auto;</code></pre><p id="7d6303e1-360e-4585-85fc-f83de2aa4822" class="">
+</p><p id="ad73448f-bdcb-468d-9328-f74c8bc45b56" class=""><span style="border-bottom:0.05em solid"><strong>Margem Automática</strong></span> - Ao criar um documento ele já vem automaticamente com uma margem para os elementos, essa margem é do elemento body, para a excluir basta colocar o valor da margem de body igual a 0</p><p id="dc91528a-8f7d-4c3f-a176-e3b44751c786" class="">
+</p><h2 id="c6eef72f-450e-480f-a0ac-6a41a072de16" class="">Acolchoamento</h2><p id="a5a228ab-ea6a-48da-8edf-ca4d82918e8d" class="">
+</p><p id="6de820e6-3c13-4c0c-97f1-faf230a6984c" class=""><span style="border-bottom:0.05em solid"><strong>Acolchoamento</strong></span> - É configurada pelo parâmetro padding tem como configurar cada direção em específico ou definir um raio para todo o acolchoamento</p><pre id="9ba8f2e8-2135-40fd-8f03-69f7e17cbd45" class="code"><code>padding: 1px 1px 1px 1px;</code></pre><p id="eea4bf4f-6231-4627-8930-86b4a6403901" class="">
+</p><h2 id="a024b2aa-c992-4986-a9df-e3ea5f416535" class="">Altura e Largura</h2><p id="9ce75cab-db9e-4630-9f93-36c44f182ba8" class="">
+</p><p id="565e217c-2259-47d1-acbc-d37a0a4e118c" class=""><span style="border-bottom:0.05em solid"><strong>Altura</strong></span> - É configurada pelo parâmetro height, e existem diversas formas de atribuir valor a ela</p><pre id="6068d70c-ba64-417b-be24-67c7ead747d2" class="code"><code>height: 100px;</code></pre><p id="8c25da19-999c-4c96-8a2b-8371778946dd" class="">
+</p><p id="f8656294-1d3e-4123-b0e8-7952fdb177a5" class=""><span style="border-bottom:0.05em solid"><strong>Largura</strong></span> - É configurada pelo parâmetro width, e existem diversas formas de atribuir valor a ela</p><pre id="4c41b0bb-eba8-4668-876d-828d7377f143" class="code"><code>width: 100px;</code></pre><p id="4c215004-fcc5-4286-b4a3-fac0861d02fb" class="">
+</p><p id="3aa9bdce-60ca-430a-a899-bf35d05cabbf" class=""><span style="border-bottom:0.05em solid"><strong>Altura Máxima</strong></span> - É configurada pelo parâmetro max-height, e existem diversas formas de atribuir valor a ela</p><pre id="e6a1f7a2-77a5-4463-8eef-e99c6f3cacfd" class="code"><code>max-height: 100px;</code></pre><p id="8dae8564-6741-4e62-8151-5cabaf154106" class="">
+</p><p id="59c19f7c-6e82-4b6f-9af6-eb0b1de6f226" class=""><span style="border-bottom:0.05em solid"><strong>Largura Máxima</strong></span> - É configurada pelo parâmetro max-width, e existem diversas formas de atribuir valor a ela</p><pre id="7b2bf74e-cd47-4598-a310-6d87834be405" class="code"><code>max-width: 100px;</code></pre><p id="479874d2-1b44-4455-87ee-fb6e99a59397" class="">
+</p><p id="44220283-f292-4294-b3c7-a80835554e4e" class=""><span style="border-bottom:0.05em solid"><strong>Altura Mínima</strong></span> - É configurada pelo parâmetro min-height, e existem diversas formas de atribuir valor a ela</p><pre id="4437b922-13b2-40c3-8f99-f299d5677f5b" class="code"><code>min-height: 100px;</code></pre><p id="02d26b63-e3f8-4faf-a9c4-e2d0caabb1b0" class="">
+</p><p id="44df1a1a-e271-463a-9848-adc348c84c47" class=""><span style="border-bottom:0.05em solid"><strong>Largura Mínima</strong></span> - É configurada pelo parâmetro min-width, e existem diversas formas de atribuir valor a ela</p><pre id="582f61b6-cb50-4632-938b-065ca9b825c8" class="code"><code>min-width: 100px;</code></pre><p id="ff85eefd-bf45-4a73-98e3-f7fb6ca8371f" class="">
+</p><ul id="3e8105fb-e797-4adc-abad-94f81a49ce85" class="bulleted-list"><li style="list-style-type:disc">Os parâmetros de altura e largura, máximas e mínimas, servem para configurar o máximo e o mínimo de tamanho que um elemento poderá atingir</li></ul><p id="a183c0fb-0f63-41dd-9346-194c6688bcee" class="">
+</p><h2 id="f6998728-a69c-445f-a2ab-eed387f9e8c3" class="">Apresentação</h2><p id="0af4389f-fd31-4c56-b113-939c874f8498" class="">
+</p><p id="65de762a-81ab-437b-a1a1-c014cc4f0f80" class="">O comando “display” é usado para indicar de que forma um elemento irá se apresentar em um site</p><pre id="483a5dc8-7eb4-498d-815e-8c7ba120fce2" class="code"><code>h1{
+            display: ;
+        }</code></pre><p id="95dff415-33e3-4c6f-b459-d33f3f1da146" class="">
+</p><p id="482cc14c-f489-45a0-a3ef-6c9e76710403" class=""><span style="border-bottom:0.05em solid"><strong>block</strong></span> - O elemento se torna box-level</p><p id="400699d1-3aa3-441b-aa0a-110afb726f59" class=""><span style="border-bottom:0.05em solid"><strong>inline</strong></span> - O elemento se torna inline-level</p><p id="7912c355-3fad-4688-b19c-b885d472e32a" class=""><span style="border-bottom:0.05em solid"><strong>inline-block</strong></span> - O elemento se torna um inline-block</p><p id="e089e171-c28f-432d-be77-2bb8c5839999" class=""><span style="border-bottom:0.05em solid"><strong>none</strong></span> - O elemento se torna oculto (não aparece)</p><p id="36b4c55c-763f-47de-abc0-155cf13bfb3c" class="">
+</p><h2 id="dd4ff81e-a52c-4f79-bc40-ae6bcf724275" class="">Posição</h2><p id="64b9f8de-ee5d-4767-a1f4-339512ca9874" class="">
+</p><p id="b1b96574-a21f-434b-9ee9-45e0c50adcff" class=""><span style="border-bottom:0.05em solid"><strong>Absoluta</strong></span> - Ao tornar um elemento absoluto, ele ganha a propriedade de poder ocupar qualquer lugar da tela, independente do elemento ao qual ele pertence (no caso o elemento pai)</p><p id="60a67688-c42c-41b5-8c08-b03693b54443" class="">Outra coisa que irá acontecer é que ele não vai se limitar ao estilo que foi designado ao seu elemento pai, ele ficará independente, podendo ter seu próprio estilo</p><pre id="aec1e202-10d5-497d-b029-942ce6bd931e" class="code"><code>position: absolute;</code></pre><p id="5fb26835-799a-4c07-84d7-01ddc292e3f3" class="">Para o parâmetro absoluto permanecer dentro de seu elemento pai, seu elemento pai deverá ser relativo</p><p id="67dd72a4-f16f-453a-8f45-16d1eb0d5dc0" class="">
+</p><p id="2cfa923b-5a0b-4ad4-b5ce-60ad96972e9c" class=""><span style="border-bottom:0.05em solid"><strong>Relativa</strong></span> - Se um elemento pai tiver a propriedade relativa, seus elementos filhos por mais que sejam absolutos, não poderão ficar fora de seu elemento pai</p><ul id="a2fe9f67-930d-4073-a054-e4616ffa8352" class="bulleted-list"><li style="list-style-type:disc">Os elementos absolutos continuam tendo todas propridades de um elemento absoluto, porém não podem ficar fora de seu elemento pai</li></ul><pre id="857b8523-01cc-4532-8600-0088ccfd61d2" class="code"><code>position: relative;</code></pre><p id="9b3d9b00-c7aa-4b15-b577-d6cf6f43764e" class="">
+</p><h2 id="ce16698b-7cbb-4d83-ab67-74bf24b782bc" class="">Posicionar um elemento absoluto</h2><p id="257553d4-69ee-40be-a078-06d79b5da416" class="">
+</p><p id="1fbc6084-b637-434c-8819-f1dcc6637318" class="">As configurações para posicionar um elemento absoluto elas funcionam em relação ao elemento no qual o elemento absoluto pertence, se ele estiver dentro de um elemento relativo o posicionamento vai ocorrer dentro desse elemento, se ele não estiver dentro de nenhum elemento relativo o posicionamento vai ser em qualquer lugar do documento</p><p id="bf2dbab9-ce09-4526-99d4-f7c2391b0734" class="">Um elemento absoluto pode receber alguns parâmetros diferentes do que os de outro elemento, os parâmetros novos que usaremos para definir o posicionamento de um elemento absoluto são os parâmetros left, top, bottom e right</p><ul id="a3f28b13-3470-4e3c-bf5a-1c08b6fc12e3" class="bulleted-list"><li style="list-style-type:disc">Left e right são os parâmetros que irão configurar o posicionamento vertical de um elemento</li></ul><ul id="0fc4b4f3-6dc5-4532-9549-0bf086217c0a" class="bulleted-list"><li style="list-style-type:disc">Top e bottom são os parâmetro que irão configurar o posicionamento horizontal de um elemento</li></ul><p id="dd21e54f-d772-4722-9ef9-b9c78a4b7917" class="">
+</p><p id="989914be-99b5-467b-9c31-60f7fe1bf045" class=""><span style="border-bottom:0.05em solid"><strong>Left</strong></span> -  O quanto o parâmeto irá deslocar da esquerda para direita</p><pre id="65716bb6-9c38-43d0-8370-3b059c3c004c" class="code"><code>left: 50%;</code></pre><p id="ec341d90-2be8-4c62-90c0-cd001367ae25" class=""><span style="border-bottom:0.05em solid"><strong>Top</strong></span> - O quanto o parâmeto irá deslocar de cima para baixo</p><pre id="9afea851-7573-4e5f-be12-b59d0bb445f1" class="code"><code>top: 50%;</code></pre><p id="4112161f-d9b9-429b-b71b-20e969ad4a8d" class="">
+</p><p id="52ad0974-c176-4564-85d8-5873905577ce" class=""><span style="border-bottom:0.05em solid"><strong>Right</strong></span> - O quanto o parâmeto irá deslocar da direita para esquerda</p><pre id="a209c1df-d43b-410f-9888-cdef7d1ea0f7" class="code"><code>right: 10px;</code></pre><p id="3f931080-97a7-4e65-9158-179c90b312dd" class="">
+</p><p id="68410042-211b-4d46-b432-f5ba95f2f2d8" class=""><span style="border-bottom:0.05em solid"><strong>Bottom</strong></span> - O quanto o parâmeto irá deslocar da baixo para cima</p><pre id="a3977049-46f8-47af-8cdd-86dd74b5af3a" class="code"><code>bottom: 10px;</code></pre><p id="66245bec-75f3-43e2-9d65-16ac70dd1264" class="">
+</p><ul id="42b36d20-b43c-4225-9ddd-ad3c27e82a83" class="bulleted-list"><li style="list-style-type:disc">Se você colocar os parâmetros left e top om o valor de 50% o ponto de início do parâmetro será exatamente no meio</li></ul><ul id="937602ee-6e31-4260-857d-00e7cdc4d67f" class="bulleted-list"><li style="list-style-type:disc">Para o parâmetro absoluto permanecer dentro de outro esse outro deve ser relativo</li></ul><p id="7879e724-3c06-4ea3-855e-52d9eb65fdb2" class="">
+</p><h2 id="a08a1e95-30ed-4fb6-9a08-f95940dcd706" class="">Posicionar para direita ou esquerda</h2><p id="9fe8e0df-25f2-487f-9639-48901e5ed640" class="">Existe um parâmetro que permite você escolher de que lado um elemento vai ficar em uma div</p><p id="865ede3c-8dac-4e76-99bf-2304b521a4c0" class="">Exemplo você tem uma div principal, e dentro dessa div principal temos duas outras divs, e você quer deixar uma dessas divs para direita e a outra para esquerda</p><p id="7a1733c3-265d-4f08-9010-1072115e4a84" class="">Para fazer isso você pode configurar o parâmetro float dentro do estilo dessas divs, confira abaixo:</p><pre id="f6d96a68-fb6c-42f3-90d0-5782bc4c56f1" class="code"><code>div#principal &gt; div#um {
+    float: left;
+}
+
+div#principal &gt; div#dois {
+    float: right;
+}</code></pre><ul id="89a601f4-8872-410c-ae8d-40433c0fbcfb" class="bulleted-list"><li style="list-style-type:disc">Ao fazer a configuração acima, uma div vai ficar posicionada a esquerda da div principal e a outra a direita da div principal</li></ul><p id="ac02dc44-e9bc-473d-a5eb-effb9bae7a7a" class="">
+</p><h2 id="6c54a6b7-54a1-4457-9565-d8f6d268cbdf" class="">Transformações</h2><p id="4de14dcb-907f-4a6b-b5c6-ae8fa4d77f30" class="">
+</p><ul id="bcaea45c-e088-4ed5-b6f2-99b4af5fed99" class="bulleted-list"><li style="list-style-type:disc">O parâmetro “transform” serve para fazer várias alterações adicionais a um elemento, transformar ela de acordo como você queira</li></ul><pre id="aaefdd28-108e-429b-a162-aeda81930b58" class="code"><code>transform: ;</code></pre><p id="eb68d3d6-a99e-4480-b30b-693403d0a4c9" class="">
+</p><p id="3bab09d0-4bea-4a64-92a0-a7b2d9a15d8c" class=""><span style="border-bottom:0.05em solid"><strong>Mover o elemento</strong></span></p><p id="55384781-9885-450f-a059-5e0794c74494" class="">Usado para mover o elemento para outro local</p><pre id="eee38d33-ba48-4058-a02d-9cc0cb1176b2" class="code"><code>transform: translate(-50%, -50%);</code></pre><p id="d78d6575-3ead-4c9e-8bfa-92647e5e4b45" class="">Translate é um parâmetro que deve receber dois valores, significado de cada valor:</p><ul id="1fcf3111-839e-498c-9e77-ee819aa3d6f3" class="bulleted-list"><li style="list-style-type:disc">Primeiro valor positivo, mexe para direita</li></ul><ul id="850cf472-b6ce-4934-807b-ccbf8d225a0a" class="bulleted-list"><li style="list-style-type:disc">Primeiro valor negativo, mexe para esquerda</li></ul><ul id="301050df-0fa4-4896-9c20-dd9523f27338" class="bulleted-list"><li style="list-style-type:disc">Segundo valor positivo, mexe para baixo</li></ul><ul id="43458752-671e-4665-a63a-9fd0a60d2280" class="bulleted-list"><li style="list-style-type:disc">Segundo valor negativo, mexe para cima</li></ul><p id="e61663a0-4061-44a4-b63a-98801c5efef5" class="">Se estiver em porcentagem, a quantidade que o elemento vai mexer vai variar de acordo com o tamanho do próprio elemento, um exemplo, se eu pedir para mexer 50% para o lado e o tamanho horizontal do elemento for de 500px, o elemento irá mexer 250px</p><p id="647308ac-5bf6-45a2-ac2c-55829443d2bd" class="">
+</p><p id="2d79cdf0-0360-4a49-aa6b-6d779adc4232" class=""><span style="border-bottom:0.05em solid"><strong>Alteração no Texto</strong></span></p><p id="ade9979c-7654-46c9-b491-0e826835482f" class="">Usado para alterar a forma das letras de um texto, entre maiúsculas e minúsculas</p><pre id="6fbe3097-0e47-42f4-abc4-b9d49352ca36" class="code"><code>text-transform: uppercase;</code></pre><p id="d0c362e6-92e9-4bd5-9060-21dc02ca01f7" class="">Além de minúsculas e minúsculas temos outras opções</p><ul id="10dbba4e-c588-475f-851d-82a240e2ab31" class="bulleted-list"><li style="list-style-type:disc">Isto é usado para alterar o texto de alguma parte do seu documento de maneira mais simples</li></ul><p id="e5e452f0-1a73-4b5b-a834-1183ca61ae77" class="">
+</p><h2 id="f95102d7-06ae-4553-bbba-0a2939388712" class="">Barra de Rolagem para Blocos</h2><p id="e4c91b6d-119e-4ffc-8c76-d5397ed1e200" class="">
+</p><ul id="cfcd349e-7657-4b65-a964-e0f448f4b0e9" class="bulleted-list"><li style="list-style-type:disc">Serve para adicionar barra de rolagem à blocos que tem conteúdos que ultrapassam o tamanho da tela</li></ul><p id="e021b907-b38a-4716-8429-87de2d51ef5e" class="">
+</p><p id="dbcd0cfd-5cbc-4816-805c-ca436482b0d4" class="">Isto torna responsiva um conteúdo que é muito largo e em aparelhos ou telas menores cria rolagem lateral no site, basta seguir os passos a seguir:</p><p id="48e4c6e0-c973-4bb5-9ec8-c1b341f66fd4" class="">
+</p><p id="ab28dcb7-6b35-4b69-971a-00bf745a456e" class="">Configure a div usando o parâmetro a seguir:</p><pre id="9b6a1c7c-dcf3-45c7-a700-f0cf3dbd6292" class="code"><code>div{
+            overflow-x: auto;
+        }</code></pre><p id="856e33bb-0eff-4953-9bf1-84025a1543d4" class="">
+</p><ul id="ccd2650f-69e1-4fee-b0d4-7985bd24a92d" class="bulleted-list"><li style="list-style-type:disc">Overflow significa todo o conteúdo que ultrapassa a tela</li></ul><ul id="289a9c46-8a8b-4177-b614-586f0088f833" class="bulleted-list"><li style="list-style-type:disc">Temos o parâmetro overflow, que configura os conteúdos que ultrapassam verticalmente e horizontalmente o tamanho da tela</li></ul><ul id="a47e9938-afe2-4c75-a1ec-7a641d07f142" class="bulleted-list"><li style="list-style-type:disc">Temos o parâmetro overflow-x, que configura os conteúdos que ultrapassam horizontalmente o tamanho da tela</li></ul><ul id="8867c952-ee81-4279-8681-882ec5e3a9b8" class="bulleted-list"><li style="list-style-type:disc">Temos o parâmetro overflow-y, que configura os conteúdos que ultrapassam verticalmente o tamanho da tela</li></ul><ul id="59e43aea-df97-4989-8cb7-76da337e8f86" class="bulleted-list"><li style="list-style-type:disc">Ao o setar como auto, ele irá criar uma barra de rolagem dentro da div, se os conteúdos da div forem maiores que a tela</li></ul></div></article></body></html>

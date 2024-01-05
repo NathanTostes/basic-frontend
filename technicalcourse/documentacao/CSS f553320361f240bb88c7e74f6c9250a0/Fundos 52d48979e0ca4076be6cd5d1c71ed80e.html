@@ -1,0 +1,720 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Fundos</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="52d48979-e0ca-4076-be6c-d5d1c71ed80e" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🧩</span></div><h1 class="page-title">Fundos</h1><p class="page-description"></p></header><div class="page-body"><p id="487c9457-f96a-42cf-a425-a8dac29b7511" class="">
+</p><ul id="35a0d73a-9c7a-4a4f-a194-a85f5b573a2a" class="bulleted-list"><li style="list-style-type:disc">Mesmo que você utilize uma imagem de fundo, é importante você configurar uma cor de fundo, pois seu site pode demorar um pouco para carregar, e enquanto não carregar mostrará esta cor de fundo configurada</li></ul><h2 id="969092ae-bdc0-4193-a972-cd8692014bc7" class="">Cor de fundo</h2><p id="2e233328-15c9-4d56-bcdc-6696ef846b52" class="">
+</p><p id="739b63ce-3fac-40d3-a6b3-020665054617" class="">O parâmetro background-color é usado para determinar uma cor de fundo a um elemento</p><pre id="59f2bd03-0109-4218-98a8-7c105bd88145" class="code"><code>background-color: #000000;</code></pre><p id="51e32e1f-4322-4ad7-9d84-0c66c80e34de" class="">
+</p><h2 id="eb0ff2e4-e09a-4c16-a375-cfcb2050f6f6" class="">Cor de fundo em degradê</h2><p id="0577060b-74d1-4e24-9775-397406aece3d" class="">
+</p><p id="4a540a84-9e36-4fad-9b49-7813ab7fa9d6" class=""><span style="border-bottom:0.05em solid"><strong>Direção do degradê</strong></span></p><p id="4f1d1307-8490-4feb-aa50-c39692c972ee" class="">Você pode alterar a imagem de fundo, acrescentando um degradê, basta colocar a direção que você quer (Em quantos graus, 90 graus = 90deg, se você colocar um valor negativo no deg vai inverter a direção do degradê), e indicar em quais cores seu degradê irá passar</p><pre id="8ee464cd-1345-4fa5-801f-9b4f3f493d2d" class="code"><code>background-image: linear-gradient(90deg, yellow, red, purple);</code></pre><p id="111d54e8-4561-43aa-828f-69c24970518a" class="">
+</p><p id="21f8d652-7d2c-4a34-a69c-daa7c6e770b7" class=""><span style="border-bottom:0.05em solid"><strong>Direção do Degradê (Forma Simples)</strong></span> - Basta colocar no lugar do parâmetro ”deg“ o parâmetro ”to (a direção que você quer)“</p><p id="a62cb911-efdd-4675-b808-ac6575620f61" class="">Direções: top (cima), right (direita), bottom (baixo), left (esquerda)</p><pre id="981c5592-ece9-4a2f-a143-c84c66941732" class="code"><code>background-image: linear-gradient(to bottom);</code></pre><p id="b29dfe50-4c56-41b6-8854-22ccb323338c" class="">
+</p><p id="7ce6243b-62d5-4cf2-bd18-1deaad61d56c" class=""><span style="border-bottom:0.05em solid"><strong>Degradê Fixo ao Fundo</strong></span></p><pre id="e8c4604d-860c-4957-853b-b57e5c973db3" class="code"><code>&lt;style&gt;
+        body
+        {
+            background-attachment: fixed;
+        }
+&lt;/style&gt;</code></pre><p id="0acc385f-206b-478b-b8f7-18a6cc4efece" class="">
+</p><p id="c55c32b3-1cbd-44f4-95c2-53970645995e" class=""><span style="border-bottom:0.05em solid"><strong>Degradê Circular</strong></span></p><pre id="106a2665-3428-420a-840a-deb85c681e7f" class="code"><code>&lt;style&gt;
+        body
+        {
+            background-image: radial-gradient(circle, yellow, red, purple);
+        }
+&lt;/style&gt;</code></pre><p id="d628988e-2767-4796-bc69-dac340c8307c" class="">
+</p><p id="6e276a87-61ec-4f23-9c43-ab45e357af3d" class=""><span style="border-bottom:0.05em solid"><strong>Volume de Cores</strong></span> - Ao colocar uma porcentagem após cada cor, muda o volume da cor dentro do degradê</p><pre id="1fb69a83-225c-4839-8404-4d0595ccbb90" class="code"><code>&lt;style&gt;
+        body
+        {
+            background-image: linear-gradient(45deg, yellow 2%, red, purple 50%);
+        }
+&lt;/style&gt;</code></pre><p id="f1447bc0-2c50-47d6-b518-10aef1ea8aed" class="">
+</p><h2 id="d49c6a0e-6f5e-4735-8785-844e8d989be5" class="">Imagem de Fundo</h2><p id="ada27d54-f5f2-44ff-83e7-e5e626a4afab" class="">
+</p><p id="a2cf306f-9a23-454d-b187-bc6bf0a1d92e" class=""><span style="border-bottom:0.05em solid"><strong>Carregar imagem para ser o fundo de um elemento</strong></span></p><p id="491e859d-3dee-4415-a7dc-5ec590580baf" class="">Para carregar uma imagem de fundo a um elemento primeiramente adicione o parâmetro background-image dentro do estilo desse elemento, depois deverá adicionar o parâmetro url dentro do parâmetro background-image</p><p id="bc594fa2-21b3-45e6-a55c-425d856f5f8e" class="">A partir daí temos duas formas de selecionar o arquivo que será fundo de nosso elemento:</p><p id="ab602b8d-f4bd-4cd3-a603-7f1ebf6b5db3" class="">
+</p><p id="91e3f31d-dbdd-4f69-a744-5ae619b0e476" class="">Imagem local, imagem que está armazenada junto ao arquivo de seu documento, para adicionar basta escrever o nome do local do arquivo</p><pre id="7d7d677f-91c5-46dd-908c-c314e3bdb1e3" class="code"><code>background-image: url(pattern001.png);</code></pre><p id="a94385b1-882f-4993-b512-027285dc9171" class="">
+</p><p id="52e50c19-c1f8-4ada-9cf3-b61629a41ce7" class="">Imagem externa, basta adicionar o link de uma imgem, porém se essa imagem sair do ar ela saíra também de seu site</p><pre id="0a093424-c134-45ce-9b7e-a31ce7a9c61a" class="code"><code>background-image: url(https://c4.wallpaperflare.com/wallpaper/500/442/354/outrun-vaporwave-hd-wallpaper-preview.jpg);</code></pre><p id="65c81b3b-5b1c-44d2-9b55-cd1b08747da2" class="">
+</p><h2 id="7bf0753d-6ca5-4136-b108-fdbcaa9c88e4" class="">Configurações de fundo</h2><p id="94d5c3ca-f435-4c7c-b8f3-8664e19a4510" class="">
+</p><p id="37cc59ce-36c7-4e72-a376-4c4b11b1132e" class=""><span style="border-bottom:0.05em solid"><strong>Tamanho da imagem de fundo</strong></span></p><p id="ae86613f-da06-44de-a51a-8c0bde9b8e89" class="">
+</p><p id="236eaede-d9d2-4ff8-936b-93aeacb2b6b0" class="">Você pode configurar qual será o tamanho da imagem de fundo de um elemento</p><ul id="30a8cf35-1959-441a-b6d7-c559768d4a81" class="bulleted-list"><li style="list-style-type:disc">A primeira definição de tamaho será a largura da imagem e a segunda a altura</li></ul><pre id="b0583e0d-fce4-48b8-ade5-7696bf780679" class="code"><code>background-size: 100px 400px;</code></pre><ul id="d50dcd82-1a2a-4f7c-9e09-845afd375180" class="bulleted-list"><li style="list-style-type:disc">Se você colocar o tamanho do fundo de 100% ele irá ocupar por completo o fundo do elemento no qual ele é fundo</li></ul><pre id="1f811f26-afbd-4565-9cad-a6323760f827" class="code"><code>background-size: 100% 100%;</code></pre><p id="3e640fd3-8843-40e4-83a5-5d44a140b281" class="">
+</p><p id="1348b256-4b96-48bb-bfa4-a55f0026ea69" class="">Existem outros 2 valores para configurar o tamanho do fundo, esses valores são:</p><pre id="cdf1823f-7773-4a6f-b001-8f7108f9c2b0" class="code"><code>background-size: contain;</code></pre><ul id="3c55d6b4-8dd5-4a41-b830-912cedfeb356" class="bulleted-list"><li style="list-style-type:disc">A imagem de fundo aparecerá por completo, porém isso pode ocasionar em a sua imagem de fundo não cobrir o fundo por completo, pois a este parâmetro se preocupa em apenas mostrar toda a imagem de fundo</li></ul><pre id="1ee127be-1148-4a43-ba2c-8f408821e001" class="code"><code>background-size: cover;</code></pre><ul id="c9590660-16f1-4cfc-a5a1-53ad03558d65" class="bulleted-list"><li style="list-style-type:disc">A imagem de fundo cobre todo o elemento a qual ela pertence, porém isso pode ocasionar em não mostrar a imagem de fundo por completo, cortando algumas partes dela para preencher o fundo por completo</li></ul><p id="55db3052-7253-48df-a652-f173b71a1c2f" class="">
+</p><p id="88dea622-ce34-4a2b-bdff-24525b14b934" class=""><span style="border-bottom:0.05em solid"><strong>Posição do fundo</strong></span></p><p id="b1e51d4e-e9a8-4523-92f3-0f2f75c47c20" class="">
+</p><p id="f530d853-8f38-4747-931b-6839f9ae8d9a" class="">A posição do fundo é determinada em relação ao elemento do qual o fundo pertence</p><ul id="2735c225-dd27-4faf-b25e-3b249aac8157" class="bulleted-list"><li style="list-style-type:disc">Se a imagem do fundo for maior do que o elemento do qual o fundo pertence, irá abrir apenas abrir uma parte da imagem, que seja relativa ao tamanho do elemento a qual ela está. O parâmetro background-position irá definir qual parte dessa imagem irá abrir. Exemplo: se o background-position for “bottom left” irá abrir a imagem a partir do ponto inferior esquerdo até o tamanho que o elemento tem</li></ul><ul id="db6d84bc-310c-439b-85a1-6f1c008a3495" class="bulleted-list"><li style="list-style-type:disc">Se a imagem for menor do que o elemento onde ela  se encontra a única coisa que irá acontecer é o fundo ficar posicionado no espaço que você designou</li></ul><p id="6b521f53-ad61-4467-8c8c-1a5c76e5946a" class="">
+</p><p id="35daabeb-fa8f-4968-b096-711845f62876" class="">Posições:</p><p id="1fb34cfd-5768-4a8f-9630-ae1215cf71de" class="">Para designar a posição da sua imagem você deve dizer duas posições</p><p id="583df311-4502-4edf-8580-298f38fd12e5" class="">Vertical: esquerda, centro, direita</p><p id="ec601f3e-3975-45f2-b1ca-2fa731ca279d" class="">Horizontal: cima, centro, baixo</p><ul id="f542e7fa-43f7-4caf-9604-b05beace81c4" class="bulleted-list"><li style="list-style-type:disc">Você deve escolher apenas um valor vertical e um horizontal</li></ul><ul id="d0661480-72e3-4777-9c80-e839af1e866c" class="bulleted-list"><li style="list-style-type:disc">Se você escolher baixo e direita, a imagem irá se posicionar no canto inferior direito</li></ul><p id="453d70e0-993c-47b7-985a-7829a89f543b" class="">
+</p><pre id="7b8154cf-eecc-427f-b811-5eb6711e21e8" class="code"><code>background-position: center center;</code></pre><p id="f9ba0eea-1c06-433b-9914-37eb5fed3c17" class="">
+</p><p id="8334df56-49de-42c7-bb28-57cad4be4ca5" class=""><span style="border-bottom:0.05em solid"><strong>Repetição da imagem de fundo</strong></span></p><p id="048cf6e2-8837-434c-85ee-7568593e6475" class="">
+</p><ul id="d8d58af9-3a82-45f8-8f8e-67f3579798fe" class="bulleted-list"><li style="list-style-type:disc">Se a imagem que você designou não ocupar o fundo de um elemento por completo, esta imagem irá repetir até preencher todo o fundo do elemento, isso é por padrão</li></ul><p id="6d7fa6e9-7b9d-46ce-bb26-a8ebf52c21f0" class="">
+</p><p id="a46c6c4c-5e4e-41ce-9bb3-1a7a92e8fe9d" class="">Para a imagem de fundo repetir até ocupar o elemento por completo (configuração padrão)</p><pre id="9450baaa-1827-43da-bc3b-79517cedd2a0" class="code"><code>background-repeat: repeat;</code></pre><p id="74be9fab-d386-4f13-b688-651099597f62" class="">
+</p><p id="0cd5ee28-f655-4b6a-b33b-c668c48bac99" class="">Para a imagem de fundo não repetir</p><pre id="cd8335e3-90fc-4b58-8e30-2812e84ed76a" class="code"><code>background-repeat: no-repeat;</code></pre><p id="ed1d40e8-efac-400b-b290-e2e6e3fc0797" class="">
+</p><p id="d197e658-0a5a-4f1b-8cdf-2c1c56bd5c6f" class="">Para a imagem de fundo só repetir horizontalmente</p><pre id="3cb54b27-9561-4991-a55c-151d8f80ec14" class="code"><code>background-repeat: repeat-x;</code></pre><p id="b90e8e7c-db92-439a-92ce-f615f5746023" class="">
+</p><p id="3ab5cd03-3ede-4bd3-9df0-571a8050776b" class="">Para a imagem de fundo só repetir verticalmente</p><pre id="8af5c7c9-1b1d-427a-bc5f-a03e6babb71c" class="code"><code>background-repeat: repeat-y;</code></pre><p id="1d44a3b8-6c83-4245-b020-495140d7c1dc" class="">
+</p><p id="5fcd61ed-5997-47f6-ab4a-32069cfde79a" class=""><span style="border-bottom:0.05em solid"><strong>Tipos de fundo</strong></span></p><p id="f6e30376-2aa3-4c02-854f-e4c0994c9b47" class="">
+</p><pre id="1003cd11-90bb-44df-ba97-b5a0b3ec630d" class="code"><code>background-attachment: fixed;</code></pre><p id="55e3b1b6-913b-47e7-b238-b295c675f83b" class="">A imagem fica fixa ao fundo</p><ul id="23985467-6a8a-4a3c-87ce-d604c86b8606" class="bulleted-list"><li style="list-style-type:disc">Este tipo de fundo também é usado para criar o efeito parallax</li></ul><p id="3a9e6a4c-e632-4c06-b52a-6a7f3fa72cad" class="">
+</p><pre id="67e79475-a2d0-48f8-8d0d-e509f5008d8d" class="code"><code>background-attachment: scroll;</code></pre><p id="b36bafc4-b156-418a-a926-6cd8c72e48d9" class="">A imagem não fica fixa ao fundo, ou seja, ao mover o site para baixo o fundo não acompanha </p></div></article></body></html>

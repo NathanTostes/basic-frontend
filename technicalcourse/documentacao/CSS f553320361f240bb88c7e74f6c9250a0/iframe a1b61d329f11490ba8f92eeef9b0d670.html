@@ -1,0 +1,709 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>iframe</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a1b61d32-9f11-490b-a8f9-2eeef9b0d670" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🖼️</span></div><h1 class="page-title">iframe</h1><p class="page-description"></p></header><div class="page-body"><p id="45d6e44a-13ed-48db-b662-5029e147fda8" class="">
+</p><p id="f9345587-4c23-4c9d-a2eb-2dcf19fdf934" class=""><span style="border-bottom:0.05em solid"><strong>iframe</strong></span></p><p id="4ad0aa59-6e29-4e2a-8fd0-9040cbcbc441" class="">São caixas que exibem dentro do seu site algum outro site</p><p id="0d53dee1-b32e-42f6-835c-126b37ba214e" class="">Você define o site que será aberto a partir do link que você adiciona no iframe</p><ul id="d833432b-c87e-4451-9864-5bac5cacbb2d" class="bulleted-list"><li style="list-style-type:disc">iframes são recomendados apenas para situações específicas</li></ul><ul id="e01e561a-8bac-415d-bff9-1af0bd12af2f" class="bulleted-list"><li style="list-style-type:disc">O iframe é um bloco de display inline</li></ul><ul id="09cfe926-7180-4e56-a31b-ccd4dbadc099" class="bulleted-list"><li style="list-style-type:disc">O tamanho padrão de um iframe é de: 300px de largura e 150px de altura</li></ul><p id="10e56635-8d4d-43b1-bf8d-e9ee0cbf62ad" class="">
+</p><p id="f861731b-ae3e-44b7-8687-d27ea16a9a5a" class=""><span style="border-bottom:0.05em solid"><strong>Link do iframe</strong></span></p><p id="5c4bad42-8335-4f7c-8d1e-a139d749333e" class="">Para linkar um site em seu iframe escreva a url do site no parâmetro src do iframe</p><ul id="3c78bd2e-2fb1-451a-8a7c-7c89b07f4496" class="bulleted-list"><li style="list-style-type:disc">Alguns sites não permitem que você crie iframe deles</li></ul><pre id="6b199a09-6ab4-4440-b25e-b731846d144c" class="code"><code>&lt;iframe src=&quot;https://www.cursoemvideo.com&quot;&gt;
+
+&lt;/iframe&gt;</code></pre><ul id="f1dc9eba-d63a-4471-86cd-197bf18e156b" class="bulleted-list"><li style="list-style-type:disc">Você pode linkar no seu iframe uma página local do seu documento, para isso basta indicar a página dentro de src, assim como no exemplo abaixo:</li></ul><pre id="b1d0a09e-43b8-44a4-b697-5e6ada5b65b6" class="code"><code>&lt;iframe src=&quot;teste.html&quot;&gt;
+
+&lt;/iframe&gt;</code></pre><p id="88903ac8-1ba9-47f5-95dc-158c389a0f28" class="">
+</p><p id="e1355de8-1f0e-4408-ad85-d2c798f3495a" class=""><span style="border-bottom:0.05em solid"><strong>Borda do iframe</strong></span></p><p id="d647943e-f6be-4492-a8e0-f8d7c610730f" class="">A borda do iframe é definida a partir do parâmetro frameborder, este parâmetro é bem limitado pois ele só aceita os valores 0 e 1, ou seja, ou sem borda ou com a borda de 1 pixel</p><ul id="d852d3c3-4534-4d2c-b801-03d31b368eea" class="bulleted-list"><li style="list-style-type:disc">Vem por padrão setado como zero, ou seja, sem borda</li></ul><ul id="d3b912cd-f45e-4e57-b510-1f8f63d4c95c" class="bulleted-list"><li style="list-style-type:disc">É recomendado usar CSS para configurar a borda de um iframe ao invés do parâmetro frameborder, pois frameborder é um parâmetro muito limitado</li></ul><pre id="37239ead-5e6d-4ac3-9436-63449f2adbad" class="code"><code>&lt;iframe src=&quot;https://www.cursoemvideo.com&quot; frameborder=&quot;0&quot;&gt;
+
+&lt;/iframe&gt;</code></pre><ul id="ee6640d7-7adc-4e8c-a0c3-30b012753cf7" class="bulleted-list"><li style="list-style-type:disc">Para configurar a borda de um iframe com CSS, é da mesma forma que configuramos a borda de qualquer outro elemento</li></ul><p id="32233c4c-6402-4b8f-9e4b-7f9355fd178f" class="">
+</p><p id="6343fa0e-962c-40db-a64b-d44c35837063" class=""><span style="border-bottom:0.05em solid"><strong>iframe inacessível</strong></span></p><p id="c9a658fe-fd8b-4e84-a244-1fe8d808ddc4" class="">Alguns aparelhos ou navegadores não são compatíveis com iframe</p><p id="76a72913-090b-4fe6-ad00-f87cc05d8b41" class="">Você pode colocar uma mensagem no lugar em que apareceria o iframe para indicar ao usuário que o iframe não pode ser aberto</p><p id="588b0dd8-4cb6-4943-b72e-47861b1d5d9a" class="">Tudo oque você acrescenta entre a tag de abertura e fechamento de um iframe é o que será exibido caso o aparelho não consiga exibir o iframe</p><pre id="a4adbdcb-8638-462a-974b-dee6ad2bdb20" class="code"><code>&lt;iframe src=&quot;https://www.cursoemvideo.com&quot; frameborder=&quot;0&quot;&gt;
+    &lt;p&gt;iframe não pode ser exibido&lt;/p&gt;
+    &lt;a href=&quot;https://www.cursoemvideo.com&quot;&gt;Clique aqui para acessar&lt;/a&gt;
+&lt;/iframe&gt;</code></pre><ul id="40e4f6fc-47c5-476d-bc13-7111d3077f77" class="bulleted-list"><li style="list-style-type:disc">É recomendado colocar o link do site que seria aberto no iframe, caso o iframe não possa ser acessado</li></ul><p id="b2bffed0-f335-40c0-82a5-328cda05226b" class="">
+</p><p id="5d93966e-8f19-435a-974b-83d969908cc2" class=""><span style="border-bottom:0.05em solid"><strong>Tamanho do iframe</strong></span></p><p id="263cfbbd-4777-48b5-bb76-404b6df00b73" class="">Para alterar o tamanho de um iframe é da mesma forma que se altera qualquer outro elemento, basta configurar o style do iframe dentro de uma CSS</p><p id="82705dc7-f5e6-4e6b-aa66-dda5091b8b39" class="">
+</p><p id="601ac8ee-0f6a-4d4b-a774-04c6fba78381" class=""><span style="border-bottom:0.05em solid"><strong>Scroll no iframe</strong></span></p><p id="e5e9efcf-1a50-442f-a86b-871c45297f84" class="">Se o conteúdo de um site for maior do que seu iframe, o iframe irá gerar uma barra de rolagem, o parâmetro scrolling define se haverá ou não haverá barra de rolagem no iframe</p><ul id="d9c1cf7b-f46f-4736-b523-0b1b2a49ef0e" class="bulleted-list"><li style="list-style-type:disc">scrolling=”auto” - cria barra de rolagem se o conteúdo do iframe exceder o tamanho dele (parâmetro padrão)</li></ul><ul id="d0909470-1d2f-455e-a683-5a0fe422fa09" class="bulleted-list"><li style="list-style-type:disc">scrolling=”no” - sem barra de rolagem</li></ul><ul id="eedc0186-9f31-4b98-8016-bbcaf5a6d89f" class="bulleted-list"><li style="list-style-type:disc">scrolling=”yes” - com barra de rolagem</li></ul><pre id="433e5615-1fba-480b-9fe7-12623db62c52" class="code"><code>&lt;iframe scrolling=&quot;no&quot;&gt;
+
+&lt;/iframe&gt;</code></pre><ul id="9da1ed6a-a219-4563-b07c-17e957b36f96" class="bulleted-list"><li style="list-style-type:disc">Sem a barra de rolagem o iframe só irá exibir o início do site, no caso a parte que couber no iframe</li></ul><p id="9093a61f-1916-4894-abf7-0a52b30305a7" class="">
+</p><p id="a75040c5-4faf-4ebd-b3df-26011383be66" class=""><span style="border-bottom:0.05em solid"><strong>Abrir os links do site no iframe</strong></span></p><p id="9018f0b3-4e77-4bd7-bba8-2ac491f62490" class="">Você pode fazer com que os links abertos sejam exibidos dentro de um iframe, para isso siga os passos a seguir</p><p id="a49148d2-29d3-4330-8a97-161a4bdb885d" class="">Primeiramente você deverá nomear o iframe que você deseja que link seja aberto, para isso use o parâmetro name, assim como no exemplo abaixo:</p><pre id="b5a8e9d7-bee5-4318-a847-78223c36e66e" class="code"><code>&lt;iframe name=&quot;frame1&quot; src=&quot;&quot;&gt;
+        
+&lt;/iframe&gt;</code></pre><ul id="e5357a59-8a70-4df2-ae61-bf36a273deac" class="bulleted-list"><li style="list-style-type:disc">Neste caso podemos deixar src vazio, pois só é para o iframe exibir a página quando o link for aberto</li></ul><p id="f521d532-84fe-4fd9-9d7e-e07f47a55539" class="">Depois de nomear o iframe, você terá que indicar o nome dele dentro do parâmetro target de um link</p><p id="d33aa057-cfa9-472a-9fcf-ce946afee24f" class="">Ao fazer isto este link ao ser acessado será aberto dentro do iframe que foi indicado no parâmetro target</p><pre id="a9e14046-f514-4aea-b614-062448b6bf99" class="code"><code>&lt;a href=&quot;#&quot; target=&quot;frame1&quot;&gt;Página 1&lt;/a&gt;</code></pre><p id="1a3fd478-1e10-4865-87c0-15bfe04d622a" class="">
+</p><p id="7a8a5e5a-923c-4c57-a4b9-3b2e5578d4a6" class=""><span style="border-bottom:0.05em solid"><strong>Conteúdo do iframe por HTML</strong></span></p><p id="ab9cec88-bc1e-4505-8d90-611f24db24a3" class="">Você pode colocar no seu iframe o conteúdo por meio de HTML, assim como a seguir:</p><pre id="acc7e115-b33c-41ab-adc8-75b8e1fdc675" class="code"><code>&lt;iframe srcdoc=&quot;&lt;h1&gt;Abra algum dos links acima&lt;/h1&gt;&quot;&gt;
+
+&lt;/iframe&gt;</code></pre><p id="a33281c1-a689-4d25-b865-91ac4aca3694" class="">Basta adicionar o parâmetro srcdoc no iframe, e dentro de srcdoc escrever parâmetros em HTML, estes parâmetros serão exibidos dentro do iframe</p><ul id="129ce9e5-35f7-4519-aa6b-7c6102e768ed" class="bulleted-list"><li style="list-style-type:disc">É recomendado você ao invés de usar srcdoc para exibir conteúdos no iframe, você criar outro documento e linkar ele no iframe</li></ul><p id="00231b09-da86-4d01-93b1-b94acca9d71f" class="">
+</p><p id="3595c495-6582-4ed4-a57c-8aa17fde77a0" class=""><span style="border-bottom:0.05em solid"><strong>Problemas no iframe</strong></span></p><ul id="6490edf9-afbc-4e9f-bfb7-b8157a84ed69" class="bulleted-list"><li style="list-style-type:disc">Segurança</li></ul><p id="6cf383f3-3f4b-4df1-8087-2dd9ddfa9cb3" class="">iframes podem apresentar falhas de segurança, pois o iframe é uma porta que você abre para outro site dentro do seu, ao abir essa porta alguns sites maliciosos podem agir de forma errada no seu site, podendo capturar e rastrear dados do usuário e do seu site, devido a isso você deve tomar muito cuidado para qual site você abrirá a porta, este site tem que ter segurança e sua confiança.</p><p id="793b54d0-5ac4-467c-8e1d-1673dce95076" class="">Apesar dos iframes não serem muito seguros, você pode tomar algumas medidas para aumentar a segurança deles</p><ul id="cfb49230-1b00-4cf8-8712-9015ebc00d5c" class="bulleted-list"><li style="list-style-type:disc">Incompatibilidade</li></ul><p id="00f0f198-ca6c-431d-a233-127045273b95" class="">Nem todos os aparelhos ou navegadores são compatíveis com iframe, e além disso existem alguns sites que não permitem que você crie um iframe deles</p><ul id="ea765913-b908-42cc-81b0-e56b83b97e7f" class="bulleted-list"><li style="list-style-type:disc">Mecanismos de busca</li></ul><p id="dc67fb5e-c5b1-442e-ae87-2546edf8df73" class="">Os mecanismos de busca do google apresentam alguns problemas para indexar conteúdos que estão dentro de iframes, ou seja, não utilize muitos iframes em seu site e se for usar não coloque nele um conteúdo que seja muito importante para seu site</p><ul id="0a91f4c1-1edc-4193-a757-35fd66a15515" class="bulleted-list"><li style="list-style-type:disc">Acessibilidade</li></ul><p id="7307e0b5-4e7b-4ed4-8605-eda996fd6b1e" class="">Isso pode prejudicar a acessibilidade do seu site, tendo em vista que programas de leitores de tela para pessoas cegas apresentam falhas para ler conteúdos que estão dentro de iframes</p><ul id="ce904b0b-02fe-46e4-8f28-91f4d43ee611" class="bulleted-list"><li style="list-style-type:disc">Responsividade</li></ul><p id="75592283-dcff-437b-b93b-d37b05ebfb35" class="">Se o site que linkou em um iframe não for responsivo, pode acontecer do conteúdo ficar quebrado e desorganizado dentro do iframe</p><ul id="1b06fb26-26a0-44e3-a2a0-abf369dab541" class="bulleted-list"><li style="list-style-type:disc">Navegação</li></ul><p id="aea91bc8-2e03-4f26-b7d6-233aac627dc9" class="">Alguns erros podem acontecer ao usuário navegar no seu iframe, a página pode não voltar ou alguma página pode não abrir, esses erros acontecem ou por conta do próprio site que foi linkado no seu iframe ou por conta do navegador</p><p id="2586ce1d-757a-4f8a-8d25-42c6e1a6f0d1" class="">
+</p><p id="871b2765-736b-4eeb-adde-419e9a8b91ca" class=""><span style="border-bottom:0.05em solid"><strong>Segurança</strong></span></p><p id="def98f98-97e0-4088-8a6e-26e2cb0a3d16" class="">Iframes não são muito seguros, porém você pode tomar algumas medidas para torná-los mais seguros</p><p id="e6cf793e-76aa-497c-8dd8-2557e61b0798" class="">Para torná-los mais seguros utilizamos dois parâmetros:</p><p id="e3621ea3-c5f1-4de9-a8d4-b2f5dddfdfa7" class="">
+</p><ul id="df4c5a3b-ecbc-4add-a68c-52dbf9ee5f3d" class="bulleted-list"><li style="list-style-type:disc">Impedir as ações do iframe</li></ul><p id="82e5bfaf-7117-464a-8354-c13a9420d82c" class="">Há um parâmetro que te permite reduzir as ações que o iframe pode realizar, este parâmetro se chama sandbox, ele está sendo representado a seguir:<div class="indented"><pre id="9d9e8c7a-f2e1-4458-91c1-90404f2b980f" class="code"><code>&lt;iframe src=&quot;frames/frame03.html&quot; sandbox=&quot;&quot;&gt;
+
+&lt;/iframe&gt;</code></pre></div></p><p id="c0abdd66-8a75-439d-8695-cd7bc16c77d3" class="">Dentro dele você pode colocar vários valores, cada valor diminui algum tipo de ação que o iframe pode realizar, veja os valores a seguir:</p><p id="470c5121-8b84-484a-b1bf-c08a9393d151" class="">sandbox - Não permite nenhum tipo de ação</p><p id="4b31614e-c7ae-48b7-be22-dfa52a93cd04" class="">allow-same-origin - Permite que apenas iframes de sites que se localizam no mesmo documento (sites locais) tomem ações</p><p id="fb443d14-1161-4f44-b641-ea9ec94e64eb" class="">allow-forms - Permite o uso de formulários</p><p id="e280e17b-560d-4ec6-aa26-1f3a1ac74c44" class="">allow-scripts -Permite o uso de scripts</p><p id="620297c9-1970-44a7-939c-5135bd54474b" class="">Você pode colocar dentro de sandbox vários dos valores acima</p><p id="3d48a692-4159-4c21-ac87-0bf14fb6d90a" class="">Tem vários outros valores que podem ser colocados em sandbox, para vê-los basta colocar o cursor entre as aspas e pressionar crtl+espaço</p><p id="8d4d91ae-7c1d-48b0-833b-4f0d0f056146" class="">
+</p><p id="e05467d3-59f8-4f6c-8e20-67433c66fa20" class="">
+</p><ul id="6e2836ee-8e40-438f-b684-e071a4f0e015" class="bulleted-list"><li style="list-style-type:disc">Impedir a coleta de dados do iframe</li></ul><p id="4f633b56-ff8a-4e5c-8596-5cc55eba4271" class="">Para impedir a coleta de dados utilizamos o parâmetro referrerpolicy, assim como a seguir:</p><pre id="6552682a-5f45-43a9-98a5-3652d1b81a18" class="code"><code>&lt;iframe src=&quot;frames/frame03.html&quot; referrerpolicy=&quot;&quot;&gt;
+        
+&lt;/iframe&gt;</code></pre><p id="cce1ecda-e514-4078-b726-8a8c425cbe0a" class="">Há dois valores que podem ser colocados nele:</p><p id="af8bfe29-e9bc-48f2-ab7a-85e04f103528" class="">no-referrer-when-downgrade - Valor padrão, que permite a coleta de dados</p><p id="efa08931-0380-48a8-b277-7973a2c87942" class="">no-referrer - Não permite a coleta de dados</p><p id="76838ee4-8447-4986-88bf-79fc6788c620" class="">
+</p><p id="173ad870-196f-4903-b990-98c09f199a3c" class=""><span style="border-bottom:0.05em solid"><strong>Utilidades principais dos iframes</strong></span></p><ul id="f0447659-fee1-4831-996c-9fc1d4f2f9cf" class="bulleted-list"><li style="list-style-type:disc">Vídeos (YouTube, Vimeo)</li></ul><ul id="95aeee75-a1b5-4ca6-b952-fe4f8c7e7bb0" class="bulleted-list"><li style="list-style-type:disc">Mapas (Google Maps, Waze)</li></ul><ul id="d93d691f-a318-44e3-bee1-c971f7d9fd5e" class="bulleted-list"><li style="list-style-type:disc">Documentos do Google</li></ul></div></article></body></html>

@@ -1,0 +1,739 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Seletores</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cc25dc11-09c5-4784-b25e-feb56167d3f4" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🪝</span></div><h1 class="page-title">Seletores</h1><p class="page-description"></p></header><div class="page-body"><p id="4e1d523c-a22a-465c-b64c-ff39c701e63a" class="">
+</p><h2 id="2bfdd591-cd7c-4306-beec-6a68eb42e159" class="">Tradução HTML x CSS</h2><p id="ab9b60de-35ef-42b3-b9b1-60f829862799" class="">
+</p><p id="f9f226db-7607-4623-9a80-07310cd2b23e" class="">“id” em HTML e “#” em CSS</p><p id="20318cb0-690c-4ea3-a086-6eee43741fe6" class="">“class” em HTML e “.” em CSS</p><p id="84e68c34-87b8-4b0f-bc42-3acc6c2024af" class="">“pseudo-class” em HTML e “:” em CSS, existem diversas pseudo classes</p><p id="5609f2df-ffd4-4a57-b440-0e3484d67cc8" class="">“pseudo-element” em HTML e “::” em CSS, existem diversos pseudo elementos</p><p id="b7e54383-47b7-4d85-b35c-f2ff495bbe01" class="">“children” em HTML e “&gt;” em CSS</p><p id="99fdea86-1ce7-4b99-adb0-6709b35364d5" class="">
+</p><ul id="9497409d-48d2-4467-aeef-485699903113" class="bulleted-list"><li style="list-style-type:disc">Um elemento pode ter id e class, porém as configurações de id sobrepõem as de class</li></ul><p id="fa904076-2de1-4d38-acba-fe6c127fbe1d" class="">
+</p><ul id="5aae1a96-ca31-44a0-8ec3-16f288daff90" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>Conteúdos (content)</strong></span> -  Em CSS conteúdos são indicados como “content”</li></ul><p id="2da72e99-50a7-49f9-9540-3081756dcc81" class="">
+</p><ul id="a711dee8-57a8-4616-9431-0c1577064313" class="bulleted-list"><li style="list-style-type:disc">Quando você for colocar estilo em algum seletor criado, o nome antes dele não muda nada</li></ul><p id="1d0c8b7e-8f75-4672-8059-7b312a7d0b69" class="">
+</p><h2 id="61acfdf5-23ff-41ac-9ef7-1f0092d3e45c" class="">id</h2><p id="d9b9cab5-f2f7-4262-a3e4-006ab2e3e769" class="">
+</p><p id="8ab5a590-373d-4acb-9165-2d10ad9844e4" class="">Ao definir um id a um elemento, você torna especial esse tal elemento, o diferenciando dos da mesma </p><p id="30ec9a79-d518-4085-a3d5-dcda2025d0e5" class="">classe</p><p id="daae44d0-c960-48a9-bda8-3f3577d597f9" class="">Com isso quando você for adicionar estilo ao seu site, você poderá fazer um estilo personalizado para este elemento em específico</p><p id="9b457cfa-9675-4b1a-853f-303cdb3aec81" class="">Abaixo mostra como definir um id a um elemento</p><p id="9d35f5cc-082b-462d-b91f-09afc904eb46" class="">
+</p><pre id="c2db6df8-21d0-45c7-998a-7e2ededbf42f" class="code"><code>&lt;h1 id=&quot;prime&quot;&gt;&lt;/h1&gt;</code></pre><p id="9278c7a5-0dd3-47de-8b2f-4d3460d7f42d" class="">
+</p><p id="81d19362-1103-4663-8ae5-2ae129fe87c4" class="">No exemplo acima nós tornamos este “h1” diferente dos outros dando uma especificação diferente a ele</p><p id="725a2114-f0b6-4365-bbfa-d5c1cb575c07" class="">Abaixo mostramos como fazer um estilo para este id que foi criado</p><p id="0433f826-501a-435d-ad96-5a0e515d90bc" class="">
+</p><pre id="71f3852f-840b-4e1b-8d34-a33b6ce5ee96" class="code"><code>h1#prime
+{
+    
+}</code></pre><p id="bab67cc7-d990-4745-b250-fc6ddbe64187" class="">
+</p><p id="3879662f-db7f-400f-827a-d91af90d066a" class="">O elemento com esse id seguirá o estilo que você deu ao id</p><p id="fbb0c79d-41d1-40aa-a3bc-3579f81f50ce" class="">
+</p><ul id="90f8c8f8-1ecd-4325-b98b-3a8b55f5f1f4" class="bulleted-list"><li style="list-style-type:disc">O exemplo acima mostra a forma que devemos referir-se ao “h1” especial quando formos dar estilo ao CSS. É com o nome que damos ao id dele, mas antes uma hashtag que dentro das CSS indica id</li></ul><ul id="112e083a-9472-49c2-869f-33592902c906" class="bulleted-list"><li style="list-style-type:disc">Não se pode usar o mesmo id em dois elementos diferentes (Apenas se for em páginas diferentes)</li></ul><p id="01704eda-8afe-46d8-90e5-6b3db5bd974b" class="">
+</p><h2 id="b4f3903b-4e6f-4956-ab74-6530a00140b1" class="">Class</h2><p id="f3863683-bcaf-4bb9-a742-e98f57bc5030" class="">
+</p><p id="ca638483-e732-4b92-9b90-6d71333a4a8f" class="">Ao indicar que um elemento faz parte de uma class ele começa a seguir o estilo dessa tal classe e não igual ao dos outros elementos dessa classe</p><p id="edc41d16-4c6d-4c45-8b83-ad6224f6e89f" class="">
+</p><pre id="7572d036-e2d7-4a18-93c7-b4d71ba51beb" class="code"><code>&lt;h1 class=&quot;prime&quot;&gt;&lt;/h1&gt;</code></pre><p id="a2a43c5a-ff70-4870-b577-a0c9f3e87568" class="">
+</p><p id="0ebdb0f5-d736-4202-bc54-dd82c0a2de39" class="">Abaixo  mostramos como fazer um estilo para esta classe</p><p id="b6d12ea3-e6f8-44dd-9b07-6b774e7b4904" class="">
+</p><pre id="17f8a268-a49f-4ae2-955a-1cd35c2a9838" class="code"><code>h1.prime
+{
+
+}</code></pre><p id="ae2a8e81-f23d-41d7-853e-e46f67486278" class="">
+</p><ul id="c3a376a4-1bd5-427f-8f80-0a2279af5d1a" class="bulleted-list"><li style="list-style-type:disc">A única diferença de id para class e que id só serve para alterar um único elemento, já class serve para você alterar um grupo de elementos que foram indicados como pertencentes a uma classe em específico</li></ul><p id="dae9ce1b-3b19-40ba-b113-41c9cd843096" class="">
+</p><ul id="e71c7987-30a9-4cb4-beb3-35bfc34e1247" class="bulleted-list"><li style="list-style-type:disc">Tem como indicar que um elemento faz parte de duas classes diferentes, como no exemplo abaixo abaixo:</li></ul><pre id="2bf538a4-f594-48c3-af94-29c172b06eef" class="code"><code>&lt;h1 class=&quot;prime alpha&quot;&gt;&lt;/h1&gt;</code></pre><p id="38f9fd53-170b-45f9-a9ba-d7bee2dcbe59" class="">
+</p><h2 id="ad8fa6c2-0206-449a-b570-dfb6fabc733c" class="">Pseudo Classes</h2><p id="c4ae9ac9-c783-4139-a39d-a553d4ca350f" class="">
+</p><p id="de855937-44f5-40f0-8bc3-78ea72d2f895" class="">Existem diversas pseudo classes, elas determinam como o estilo de algum elemento dependendo do estado em que ele se encontra</p><p id="675d1d31-f6ca-40f9-983b-1eef086e545f" class="">
+</p><pre id="87ec2cf4-ae3e-4932-bffe-e186367e5e3f" class="code"><code>div:hover{
+            background-color: blueviolet;
+        }</code></pre><p id="094a63d5-a46b-4399-bfd3-2d230c44804e" class="">
+</p><p id="ca7a0d67-0e36-420a-8d6b-cca529fe7eb8" class="">Neste exemplo acima, estamos utilizando o parâmetro hover (Parâmetro ativado quando seu mouse está encima de algum elemento)</p><p id="48d4ccfc-3dda-4672-b338-8d7db8e2e20a" class="">Isto acima indica que quando o mouse for passado encima da “div” está “div” mudará de estilo de acordo como você configurou para esta pseudo classe</p><p id="5acd5641-f924-407c-8221-a875dd15f7ea" class="">
+</p><ul id="aa768df9-a4a3-474a-a2ea-76a359025328" class="bulleted-list"><li style="list-style-type:disc">Você pode colocar um tempo para a transição entre o estilo normal e o depois da psudo classe ser ativada, esse tempo pode ser indicado em segundos (s) ou milisegundos (ms)</li></ul><pre id="bfd6c315-ddfe-4c73-864d-b23b67407aa3" class="code"><code>div{
+    transition-duration: 0.5s;
+}</code></pre><p id="ee2c43a7-1714-4650-8256-6c1e75560cc9" class="">Essa tag deve ser usada na área do estilo antes da pseudo classe ser ativada</p><p id="338c397b-70f5-4b87-9fbb-0f715a771bb1" class="">
+</p><h2 id="21656666-e945-4874-b1dd-18734050db11" class="">Tipos de Pseudo Classes</h2><p id="45de41b4-4d40-49e3-b176-2a37b6dff357" class="">
+</p><p id="0b19d14a-62a9-4023-8f84-c002f540170b" class=""><span style="border-bottom:0.05em solid"><strong>hover</strong></span> - Quando o mouse estiver em cima do elemento o estilo se altera</p><p id="43af8936-9244-47f1-a529-13a164602320" class=""><strong><span style="border-bottom:0.05em solid">visited</span></strong> - Quando o link do elemento já foi visitado o estilo se altera</p><p id="29881334-71fa-4269-82c8-36cf13c8f9e5" class=""><span style="border-bottom:0.05em solid"><strong>active</strong></span> - Quando clicarem encima do elemento o estilo se altera</p><p id="14689cb4-6bae-4dd6-9352-87c19ef47015" class=""><span style="border-bottom:0.05em solid"><strong>focus-within</strong></span> - Quando uma caixa está selecionada o estilo se altera</p><p id="bc0f5c28-d388-459a-8027-45d94a5f5604" class=""><span style="border-bottom:0.05em solid"><strong>nth-child()</strong></span> - Serve para alternar os estilos de um mesmo elemento (usado prinicipalmente para fazer o efeito zebrado), exemplo: td:nth-child(2n), fará com que a cada 2 dados da tabela um fique com o estilo diferente</p><p id="43dcc733-55be-4d6a-ab26-2b51985fa9ff" class="">
+</p><h2 id="67070a1a-a9da-40ce-a54f-5ffc9b5ac09e" class="">Elemento Filho</h2><p id="fa97c573-ffac-40c1-8088-ba2cf89b9864" class="">
+</p><p id="00e8619b-b8b1-4671-bc29-a5a87d3304b7" class="">Você pode estilizar um elemento que está dentro de outro de uma forma específica</p><p id="72147048-391a-43c5-ae3b-088cdbf34dc9" class="">
+</p><p id="cbf4525b-f755-409c-ac4f-462fde5e5633" class="">Por exemplo, se eu tiver parágrafos dentro de uma div, e eu quiser dar um estilo específico a esses parágrafos dentro da div eu posso usar o código abaixo:</p><pre id="773bfb8a-4d11-47bc-9d35-ed4f91e8f475" class="code"><code>div &gt; p{
+            
+        }</code></pre><p id="564b0aa1-864b-4960-a770-91db642a67f2" class="">Com o código acima eu indico que este estilo só irá afetar os parágrafos que estejam um nível dentro de alguma div, já com o código abaixo todos os parágrafos que estiverem em uma div independente do nível serão afetados pelo estilo</p><pre id="b92f0bb9-ba8b-4612-8d31-111521a1df58" class="code"><code>div p{
+    
+}</code></pre><ul id="60a52ce4-5f48-4406-a0a8-f940e7b7df48" class="bulleted-list"><li style="list-style-type:disc">Ao colocar (div &gt; p) você indica que só serão afetados pelo estilo os elementos que estiverem a um nível de distância de div, ou seja os parágrafos que estiverem dentro de um aside, que por sua vez estão dentro de uma div, não serão afetados</li></ul><ul id="d52e1aff-8cc1-4829-95b6-ff929f84cd7d" class="bulleted-list"><li style="list-style-type:disc">Ao colocar (div p) você indica que independente da distância que o parágrafo estiver de div ele será afetado</li></ul><p id="25da9a2b-3e2d-4e43-8722-b03eff6e513c" class="">
+</p><p id="6f86988e-4961-4ebf-9666-546569250226" class="">
+</p><p id="aa114fdd-a718-40c5-b140-457954a09987" class="">Um exemplo abaixo:</p><pre id="e7938f4f-9097-4d86-a692-f444dea2c133" class="code"><code>div &gt; p{
+            display: none;
+        }
+
+        div:hover &gt; p{
+            display: block;
+
+        }</code></pre><p id="35be217a-bbc4-482a-912a-996cc90b9375" class="">Neste exemplo acima nós ocultamos todos os parágrafos dentro de div, mas quando passarmos o mouse encima da div, este parágrafo irá se revelar</p><p id="d664aa3e-fdf0-4015-a964-039767ee91df" class="">
+</p><h2 id="8a73f59c-ea00-4a7e-b717-3da2a53e8b93" class="">Pseudo elemento</h2><p id="5d6b1652-3a3e-4b82-aa3d-14f5bce6a064" class="">
+</p><p id="b8fe2fd3-9087-43c3-9146-c712be7bdd3b" class="">Serve para configurar/adicionar elementos dentro de outros elementos</p><p id="1ed88bf3-3170-4cec-a904-a3f7bf3de56a" class="">
+</p><pre id="e5d06abf-cfd2-462e-b73d-cd45e3d2fac7" class="code"><code>a::after{
+            content: &#x27;&#x27;;
+        }</code></pre><p id="c52ed435-1738-4fb6-aeaf-adc897c2f4a3" class="">No exemplo acima adicionaremos um pseudo elemento ao elemento “a”</p><p id="17643b75-0fc8-4a32-a0d9-f0f86a8a5b41" class="">
+</p><ul id="61a57d26-446d-428a-88ba-1ab88b734b18" class="bulleted-list"><li style="list-style-type:disc">Existem diversos tipos de pseudo-elementos que podemos adicionar aos elementos</li></ul><p id="a178d2ec-d49a-4e51-92d3-116d5f43fb3c" class="">
+</p><h2 id="b4e5947a-c611-4374-9c0f-5e4dffff4287" class="">Tipos de Pseudo Elementos</h2><p id="b5e90b68-68fc-49df-a039-e54c1048a9e8" class="">
+</p><p id="4fa35db0-5b9b-41d4-a3bc-7169afced0df" class=""><span style="border-bottom:0.05em solid"><strong>after</strong></span> - Serve para implementar algo após um elemento</p><p id="a7b36638-ca7a-45c3-9632-dc990a185629" class=""><span style="border-bottom:0.05em solid"><strong>before</strong></span> - Serve para implementar algo antes de um elemento</p><p id="2c81d714-e478-4f09-a1e4-986f55923bac" class="">webkit-scrollbar - Serve para estilizar a barra de rolagem</p><p id="fac16fab-e556-4229-983c-a257e120618e" class="">
+</p><h2 id="5a3a96df-8e82-46aa-8798-cd439b74779b" class="">Selecionar elementos pelo valor de sua variável</h2><p id="870169c4-2fa6-4e61-aa04-fbd0161f36c6" class="">Você pode dar um estilo a um elemento o espececíficando por meio da valor da váriável dele, veja um exemplo abaixo:</p><pre id="a873415c-9c49-4c83-bc68-152f1d213d24" class="code"><code>input[type=&quot;submit&quot;] {
+    display: block;
+}</code></pre><ul id="1c8e034e-2fa5-4c65-9c9b-70b9d7e79d37" class="bulleted-list"><li style="list-style-type:disc">Para fazer você deve digitar o nome de um elemento e após ele entre parênteses você especifica um parâmetro dele</li></ul><ul id="04710dc0-4f3e-4243-b06f-3fd9708c368b" class="bulleted-list"><li style="list-style-type:disc">No exemplo acima nós configuramos o estilo apenas dos inputs que são do tipo submit</li></ul></div></article></body></html>
