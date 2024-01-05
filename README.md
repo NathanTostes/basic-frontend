@@ -1,2 +1,2 @@
 # html-css
- Repositório referente aos meus estudos de HTML e CSS
+ Repository about my html and css studies
