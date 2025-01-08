@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function calculateParallelepipedDiagonal() {
+        let heigth = parseFloat(prompt("Digite a altura do paralelepípedo:"));
+        let width = parseFloat(prompt("Digite a largura do paralelepípedo:"));
+        let depth = parseFloat(prompt("Digite a profundidade do paralelepípedo:"));
+        heigth = Math.pow(heigth, 2);
+        width = Math.pow(width, 2);
+        depth = Math.pow(depth, 2);
+        let diagonal = Math.sqrt(heigth + width + depth);
+        document.write("A diagonal do paralelepípido é " + diagonal);
+    }
+    calculateParallelepipedDiagonal();
+</script>
+</html>
