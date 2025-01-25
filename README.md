@@ -1,2 +1,2 @@
 # Frontend basics studies
-Repository for my HTML5, CSS3 and JS studies
+Repository for basic front-end studies (HTML, CSS, JS)
